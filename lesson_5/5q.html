@@ -1,0 +1,22 @@
+<!-- when we click the button use the code eval(caculation); (eval(...)) converts the caculation string into actual math)
+ save the result back in the calculation; calculation = eval(calculation);
+ display the result in the console:console.log(calculation) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5q</title>
+</head>
+<body>
+  <button onclick="calculation+='1'; console.log(calculation)">1</button>
+  <button onclick="calculation+='2'; console.log(calculation)">2</button>
+  <button onclick="calculation+='3'; console.log(calculation)">3</button>
+  <button onclick="calculation+=' + '; console.log(calculation)">+</button>
+  <button onclick="console.log(eval(calculation));">=</button>
+  <script>
+    let calculation = '' ;
+  </script>
+</body>
+</html>

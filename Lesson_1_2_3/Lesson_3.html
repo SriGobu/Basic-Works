@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+      // 19-08-2025 -- 10:00 -- 10:30 -- lap 1 -- start : 43:26 -- ended : 1:00:52  // 
+
+      // 20-08-2025 -- 05:00 -- 06:30 -- lap 2 -- 3a - 3k  -- start : 43:26 -- ended : 1:07:26 //
+
+      // 20-08-2025 -- 05:30 -- 05:50 -- lap 3 -- 3l - Finish  -- start : 1:07:26 -- ended : 
+
+      // Lesson 3 -- Strings ( Represents -- " Text " ) //
+
+      // Strings EXCERSICES //
+
+      // 3a - create the text ' my name is : ' as a string
+      console.log('my name is :')
+      // 3b - create your name as a string
+      console.log('srigobu')
+      // 3c - using concatenation add the 3a + 3b 
+      console.log('my name is : ' + 'srigobu')
+      // 3d - you order 1 coffee $5 and 1 bagel $3 using math calculate total 
+      // and using concatenate create a text total and add the total of the product
+      console.log("the total cost ",5+3)
+      console.log('total cost : $'+(5+3))
+      // 3e - same as 3d but use template string and interpolation
+      console.log(`total cost : $${5+3}`)
+      // 3f - display the 3e in the alert message
+      //alert(`total cost  : $${5+3}`)
+      // 3g - you order 1 coffee $5.99 and 1 bagel $2.95,using math calculate total and using concatenation
+      // to make a decimal number to cent 5.99 => 599 , 2.95 = > 295 
+      // to make a cent number to percent => ((599+295)/100)
+      // / => per , 100 => cent 
+      console.log('total cost : '+((599+295)/100))
+      // 3h - same as 3g but use interpolation and template string
+      console.log(`total cost : $${5.95+2.95}`)
+      // 3i - display the 3h in a alert message
+      //alert(`total cost : $${5.95+2.95}`);
+      // 3j - using multiline string create the text from 3h and 
+      // add a line of text underneath: 'thank you, come again!' display in a popup
+      // //alert(`Total cost : $${(599+295)/100}
+      // Thank you, come again! `)
+      // in amazon project,update the cart to 2 basketballs $20.95 each with $4.99 shipping
+      // add 2 tshirts $7.99 each with $4.99 shipping 
+      // 3k - use interpolation create the first line of text ( use  math to calculate the number 4 and 57.88 )
+      console.log(`items(4):$`+(20.95+20.95+7.99+7.99));
+      // 3l - create second line of text shipping & handling $9.98 (use math)
+      console.log(`shipping & handling : $${4.99+4.99}`);
+      // 3m - create third line : ' total before tax ' (use math)
+      console.log(`Total before tax : $${57.88+9.98}`)
+      // 3n - create fourth line of text : estimated tax 10% : $6.79 ( use math and math.round(): to calculate the exact number)
+      console.log(`Estimated tax (10%) : `+ Math.round(67.86*0.1))
+      // finish - change the cart back to basketball 1 , t shirt 1 , (both free shipping )
+      console.log("---new cart---")
+      console.log(`items(4):$`+(20.95+7.99))
+      console.log(`shipping & handling : $${0.00+0.00}`);
+      console.log(`Total before tax : $${20.95+7.99}`);
+      console.log(`Estimated tax (10%) : `+ Math.round((20.95+7.99)*0.1))
+  </script>
+</body>
+</html>

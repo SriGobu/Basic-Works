@@ -1,0 +1,247 @@
+<!-- in excercise 5i - 5k, we created the 'remove cart','-2'and '-3' buttons . before updating the quantity,check if it will go below 0; -->
+<!-- if it will create a popup saying 'Not enough items in the cart' and 'dont't update the quantity  -->
+<!-- otherwise update the quantity and console.log() it as usual -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6l</title>
+</head>
+<body>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5j</title>
+  </head>
+  <body>
+    <p>Cart Quantity</p>
+
+    <button onclick="console.log(`cart Quantity : ${cartQuantity}`)">
+      Show Quantity
+    </button>
+    <button
+      onclick=" cartQuantity = cartQuantity ++ ; console.log(`cart Quantity : ${cartQuantity}`)"
+    >
+      Add To Cart
+    </button>
+    <button
+      onclick=" cartQuantity = cartQuantity +=2 ; console.log(`cart Quantity : ${cartQuantity}`)"
+    >
+      +2
+    </button>
+    <button
+      onclick=" cartQuantity = cartQuantity +=3 ; console.log(`cart Quantity : ${cartQuantity}`)"
+    >
+      +3
+    </button>
+
+    <button
+      onclick="  cartQuantity = cartQuantity +=4 ; console.log(`cart Quantity : ${cartQuantity}`)"
+    >
+      +4
+    </button>
+    <button
+      onclick="  cartQuantity = cartQuantity +=5 ; console.log(`cart Quantity : ${cartQuantity}`)"
+    >
+      +5
+    </button>
+    <button
+      onclick=" cartQuantity = 0;
+      console.log('cart was reset');
+      console.log(`cart Quantity : ${cartQuantity}`);"
+    >
+      Reset Cart
+    </button>
+        <button
+      onclick=" cartQuantity = cartQuantity -- ; console.log(`cart Quantity : ${cartQuantity}`)
+                  if (cartQuantity <=0) {
+        alert(`Not enough items in the cart and don't update the quantity`);
+      } else {
+        alert(` you can update the quantity`)
+      }"
+    >
+      Remove from cart
+    </button>
+        <button
+      onclick=" cartQuantity = cartQuantity -=2 ; console.log(`cart Quantity : ${cartQuantity}`)
+                  if (cartQuantity <=0) {
+        alert(`Not enough items in the cart and don't update the quantity`);
+      } else {
+        alert(` you can update the quantity`)
+      }"
+    >
+      -2
+    </button>
+    <button
+      onclick=" cartQuantity = cartQuantity -=3 ; console.log(`cart Quantity : ${cartQuantity}`)
+                  if (cartQuantity <=0) {
+        alert(`Not enough items in the cart and don't update the quantity`);
+      } else {
+        alert(` you can update the quantity`)
+      }"
+    >
+      -3
+    </button>
+
+
+    <script>
+      let cartQuantity = 0; //  case -- 02:24:33 -- 02:26:10 //
+    </script>
+  </body>
+</html>
+  
+  <!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5i</title>
+  </head>
+  <body>
+    <p>Cart Quantity</p>
+
+    <button onclick="console.log(`cart Quantity : ${cartQuantity}`)">
+      Show Quantity
+    </button>
+    <button
+      onclick="  cartQuantity = cartQuantity + 1 ; console.log(`cart Quantity : ${cartQuantity}`)"
+    >
+      Add To Cart
+    </button>
+    <button
+      onclick="  cartQuantity = cartQuantity + 2 ; console.log(`cart Quantity : ${cartQuantity}`)"
+    >
+      +2
+    </button>
+    <button
+      onclick=" cartQuantity = cartQuantity + 3 ; console.log(`cart Quantity : ${cartQuantity}`)"
+    >
+      +3
+    </button>
+
+    <button
+      onclick=" cartQuantity = cartQuantity + 4 ; console.log(`cart Quantity : ${cartQuantity}`)"
+    >
+      +4
+    </button>
+    <button
+      onclick=" cartQuantity = cartQuantity + 5 ; console.log(`cart Quantity : ${cartQuantity}`)"
+    >
+      +5
+    </button>
+    <button
+      onclick=" cartQuantity = 0;
+      console.log('cart was reset');
+      console.log(`cart Quantity : ${cartQuantity}`);"
+    >
+      Reset Cart
+    </button>
+        <button
+      onclick=" cartQuantity = cartQuantity - 1 ; console.log(`cart Quantity : ${cartQuantity}`)
+      if (cartQuantity <=0) {
+        alert(`Not enough items in the cart and don't update the quantity`);
+      } else {
+        alert(` you can update the quantity`)
+      }"
+    >
+      Remove from cart
+    </button>
+
+
+    <script>
+      let cartQuantity = 0; //  case -- 02:24:33 -- 02:26:10 //
+    </script>
+  </body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5j</title>
+  </head>
+  <body>
+    <p>Cart Quantity</p>
+
+    <button onclick="console.log(`cart Quantity : ${cartQuantity}`)">
+      Show Quantity
+    </button>
+    <button
+      onclick=" cartQuantity = cartQuantity + 1 ; console.log(`cart Quantity : ${cartQuantity}`)"
+    >
+      Add To Cart
+    </button>
+    <button
+      onclick=" cartQuantity = cartQuantity + 2 ; console.log(`cart Quantity : ${cartQuantity}`)"
+    >
+      +2
+    </button>
+    <button
+      onclick=" cartQuantity = cartQuantity + 3 ; console.log(`cart Quantity : ${cartQuantity}`)"
+    >
+      +3
+    </button>
+
+    <button
+      onclick="  cartQuantity = cartQuantity + 4 ; console.log(`cart Quantity : ${cartQuantity}`)"
+    >
+      +4
+    </button>
+    <button
+      onclick="  cartQuantity = cartQuantity + 5 ; console.log(`cart Quantity : ${cartQuantity}`)"
+    >
+      +5
+    </button>
+    <button
+      onclick=" cartQuantity = 0;
+      console.log('cart was reset');
+      console.log(`cart Quantity : ${cartQuantity}`);"
+    >
+      Reset Cart
+    </button>
+        <button
+      onclick=" cartQuantity = cartQuantity - 1 ; console.log(`cart Quantity : ${cartQuantity}`)
+            if (cartQuantity <=0) {
+        alert(`Not enough items in the cart and don't update the quantity`);
+      } else {
+        alert(` you can update the quantity`)
+      }"
+    >
+      Remove from cart
+    </button>
+        <button
+      onclick=" cartQuantity = cartQuantity -2 ; console.log(`cart Quantity : ${cartQuantity}`)
+            if (cartQuantity <=0) {
+        alert(`Not enough items in the cart and don't update the quantity`);
+      } else {
+        alert(` you can update the quantity`)
+      }"
+    >
+      -2
+    </button>
+    <button
+      onclick=" cartQuantity = cartQuantity -3 ; console.log(`cart Quantity : ${cartQuantity}`)
+            if (cartQuantity <=0) {
+        alert(`Not enough items in the cart and don't update the quantity`);
+      } else {
+        alert(` you can update the quantity`)
+      }"
+    >
+      -3
+    </button>
+
+
+    <script>
+      let cartQuantity = 0; //  case -- 02:24:33 -- 02:26:10 //
+    </script>
+  </body>
+</html> -->
+
+</body>
+</html>

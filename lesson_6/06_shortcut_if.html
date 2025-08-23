@@ -1,0 +1,53 @@
+<!-- shortcuts for if statement  -->
+
+<!-- ternary operator ? : -->
+
+<!-- guard operator && : -->
+<!-- default operator || :  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Short Cut For If Statement</title>
+</head>
+<body>
+  
+  <script>
+
+    // ternary operator ?
+
+     const result = 0 ? 'truthy' : 'falsy'
+    // true - condition
+    // ? truthy - if branch
+    // : falsy : else branch
+    // we can save ternary opertor in a variable
+
+    console.log(result);
+
+    // guard operator &&
+
+   const message =  false && 'hello';
+   // if the first condition is false it will guard the place and will not alow any condition at next
+   // if the first condition is true it goes to the second condition 
+
+   console.log(message);
+
+   // Default Operator ||
+
+   const currency = false || false ;
+   // if the first condtion is true it will print it 
+   // if the first condition is false it will print the second condtiton
+
+   console.log(currency);
+
+   let currency1 ;
+   if(!currency1){
+    console.log(currency1 = 'USD');
+   }
+
+
+</script>
+</body>
+</html>

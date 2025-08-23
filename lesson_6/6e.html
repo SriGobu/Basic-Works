@@ -1,0 +1,29 @@
+<!-- continuing from excersice 6d let's say the discount is only available if it is not a holiday . create a variable : const isholiday = true ; -->
+
+<!-- update the code so that in order to get a discount . people must meet the age requirements and it is also not a holiday -->
+
+<!-- note && has a higher priority than || so you may need to use brackets () to control which code gets done first  -->
+
+<!-- try changing the value of isHoliday to display different messages -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6e</title>
+</head>
+<body>
+  <script>
+    age = 6 ;
+    isHoliday = false;
+
+    if ((isHoliday) && (age <= 6 || age >=65)) {
+      console.log("you are eligble for discount");
+    } else {
+      console.log("you are not eligble for any discount");
+    }
+
+  </script>
+</body>
+</html>

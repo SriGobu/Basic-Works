@@ -1,0 +1,55 @@
+<!-- 6f -- generate random number with Math.random[] save it in a variable -->
+
+<!-- 6g -- create an if statement and check : -->
+<!-- if the number is lessthan 0.5 then display heads in the console  -->
+<!-- else display tails in the console -->
+
+<!-- 6h -- instead of displaying heads or tails in the console save the result in a variable called result -->
+
+<!-- 6i -- let's say we're trying to guess the result create a variable called 'guess' and save your guess 'heads' and 'tails' ) -->
+<!-- if your guess matches the result display 'you win!' in the console -->
+<!-- if your guess does not match the result display 'you lose' -->
+
+<!-- 6j -- challenge instead of using if statement in the previous excersices try switching them into a ternary operator (condition ? A : B) -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>6f -- 6j</title>
+  </head>
+  <body>
+    <script>
+      let random = Math.random();
+
+      // console.log(random);
+
+      let result = "";
+
+      // if (random < 0.5) {
+      //   result = "heads";
+      //  console.log(result);
+      // } else {
+      //   result = "tails";
+      //  console.log(result);
+      // } 
+
+      // if (result === 'heads') {
+      //   console.log('you Win!');
+      // } else {
+      //   console.log('you Lose!');
+      // }
+
+
+      random < 0.5 ? result = 'Heads'  : result = 'Tails' ;
+
+      console.log(random);
+
+      console.log(result);
+
+      result === 'Heads' ? console.log('you Win!')  : console.log('you Lose!');
+
+    </script>
+  </body>
+</html>

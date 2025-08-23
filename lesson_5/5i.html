@@ -1,0 +1,61 @@
+<!-- in the cart quantity project add a button remove from cart which decreases the cart quantity by 1  -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5i</title>
+  </head>
+  <body>
+    <p>Cart Quantity</p>
+
+    <button onclick="console.log(`cart Quantity : ${cartQuantity}`)">
+      Show Quantity
+    </button>
+    <button
+      onclick="  cartQuantity = cartQuantity + 1 ; console.log(`cart Quantity : ${cartQuantity}`)"
+    >
+      Add To Cart
+    </button>
+    <button
+      onclick="  cartQuantity = cartQuantity + 2 ; console.log(`cart Quantity : ${cartQuantity}`)"
+    >
+      +2
+    </button>
+    <button
+      onclick=" cartQuantity = cartQuantity + 3 ; console.log(`cart Quantity : ${cartQuantity}`)"
+    >
+      +3
+    </button>
+
+    <button
+      onclick=" cartQuantity = cartQuantity + 4 ; console.log(`cart Quantity : ${cartQuantity}`)"
+    >
+      +4
+    </button>
+    <button
+      onclick=" cartQuantity = cartQuantity + 5 ; console.log(`cart Quantity : ${cartQuantity}`)"
+    >
+      +5
+    </button>
+    <button
+      onclick=" cartQuantity = 0;
+      console.log('cart was reset');
+      console.log(`cart Quantity : ${cartQuantity}`);"
+    >
+      Reset Cart
+    </button>
+        <button
+      onclick=" cartQuantity = cartQuantity - 1 ; console.log(`cart Quantity : ${cartQuantity}`)"
+    >
+      Remove from cart
+    </button>
+
+
+    <script>
+      let cartQuantity = 0; //  case -- 02:24:33 -- 02:26:10 //
+    </script>
+  </body>
+</html>

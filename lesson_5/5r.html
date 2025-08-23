@@ -1,0 +1,32 @@
+<!-- create the rest of the buttons in the calculator to create multiple rows of buttons inside <p> element like this  -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5r</title>
+  </head>
+  <body>
+    <p>
+      <button onclick="calculation+='1'; console.log(calculation)">1</button>
+      <button onclick="calculation+='2'; console.log(calculation)">2</button>
+      <button onclick="calculation+='3'; console.log(calculation)">3</button>
+    </p>
+    <p>
+      <button onclick="calculation+='4'; console.log(calculation)">4</button>
+      <button onclick="calculation+='5'; console.log(calculation)">5</button>
+      <button onclick="calculation+='6'; console.log(calculation)">6</button>
+    </p>
+    <p>
+      <button onclick="calculation+='4'; console.log(calculation)">7</button>
+      <button onclick="calculation+='5'; console.log(calculation)">8</button>
+      <button onclick="calculation+='6'; console.log(calculation)">9</button>
+    </p>
+    <button onclick="calculation+=' + '; console.log(calculation)">+</button>
+    <button onclick="console.log(eval(calculation));">=</button>
+    <script>
+      let calculation = "";
+    </script>
+  </body>
+</html>

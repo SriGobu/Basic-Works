@@ -1,0 +1,60 @@
+<!-- cart quantity project -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart Quantity</title>
+  </head>
+  <body>
+    <p>Cart Quantity</p>
+
+    <button onclick="console.log(`cart Quantity : ${cartQuantity}`)">
+      Show Quantity
+    </button>
+    <button
+      onclick=" cartQuantity +=1 ; console.log(`cart Quantity : ${cartQuantity}`)"
+    >
+      Add To Cart
+    </button>
+    <button
+      onclick=" cartQuantity =+2 ; console.log(`cart Quantity : ${cartQuantity}`)"
+    >
+      +2
+    </button>
+    <button
+      onclick=" cartQuantity =+3 ; console.log(`cart Quantity : ${cartQuantity}`)"
+    >
+      +3
+    </button>
+    <button
+      onclick=" cartQuantity = 0;
+      console.log('cart was reset');
+      console.log(`cart Quantity : ${cartQuantity}`);"
+    >
+      Reset Cart
+    </button>
+
+    <script>
+      let cartQuantity = 0; //  case -- 02:24:33 -- 02:26:10 // 
+    </script>
+  </body>
+</html>
+
+<!-- over view -->
+<!-- we can add variable in the onclick attribute -->
+<!-- we can also make changes in the variables  -->
+<!-- by using ${} with `` it will make it easier  -->
+<!-- we dont have to create a new variable for each button onclick 
+     by simply reassigning new value in the same variable  --> 
+<!-- we can create multiple console part or variables in a same onclick attribute -->
+<!-- shortcut -->
+<!-- these three methods will do the same thing  -->
+<!-- we dont have to  type each and every time as
+  cartQuantity = cartQuantity +1 -->
+<!-- for simple we can type as 
+  cartQuantity +=1 -->
+<!-- another simple method is 
+  cartQuantity++  -->
+
