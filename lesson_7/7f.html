@@ -1,0 +1,35 @@
+<!-- create a function 'convertTemperature(degree,unit)' that takes a number and a unit ('c' or 'f'), and converts it into  the other unit  -->
+<!-- convertTemperatur(25,'c') => '77f' -->
+<!-- convertTemperature(86,'f') => '30c' -->
+<!-- note : return a string and try to reuse the functions from 7d and 7e -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>7f</title>
+  </head>
+  <body>
+    <script>
+      function convertTemperature(degree, unit) {
+        if (unit === "C") {
+          function convertToFahrenHeit(degree) {
+            Fahrenheit = (degree * 9) / 5 + 32;
+            return `${Fahrenheit}F`;
+          }
+          console.log(convertToFahrenHeit(25));
+        } else if (unit === "F") {
+          function convertToCelcius(degree) {
+            celcius = ((degree - 32) * 5) / 9;
+            return `${celcius}C`;
+          }
+          console.log(convertToCelcius(86));
+        }
+      }
+
+      convertTemperature(25, "C");
+      convertTemperature(86,'F')
+    </script>
+  </body>
+</html>

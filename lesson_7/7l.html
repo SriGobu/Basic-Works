@@ -1,0 +1,47 @@
+<!-- modify 'updatecartquantity' so that if the quantity is invalid , alert(); and then return ; (this is called an early return). an early return make our code cleaner beacuse we can remove the else if / else  -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5l</title>
+  </head>
+  <body>
+    <p>Cart Quantity</p>
+
+    <button onclick="updateCartQuantity(cartQuantity)">
+      Show Quantity
+    </button>
+    <button onclick="updateCartQuantity(1)">Add To Cart</button>
+    <button onclick="updateCartQuantity(2)">+2</button>
+    <button onclick="updateCartQuantity(3)">+3</button>
+    <button onclick="updateCartQuantity(4)">+4</button>
+    <button onclick="updateCartQuantity(5)">+5</button>
+    <button
+      onclick="updateCartQuantity(-cartQuantity);
+      console.log('cart was reset');
+      console.log(`cart Quantity : ${cartQuantity}`);"
+    >
+      Reset Cart
+    </button>
+    <button onclick="updateCartQuantity(-1);">Remove from cart</button>
+    <button onclick="updateCartQuantity(-2);">-2</button>
+    <button onclick="updateCartQuantity(-3);">-3</button>
+
+    <script>
+      let cartQuantity = 0; //  case -- 02:24:33 -- 02:26:10 //
+
+      function updateCartQuantity(value) {
+        cartQuantity += value;
+        console.log(`cart quantity : ${cartQuantity}`);
+        if (cartQuantity == typeof(cartQuantity) || (cartQuantity <= 0) || cartQuantity == Math.random(cartQuantity) ) {
+          alert('the cart if full');
+          return;
+        }
+      }
+
+      
+    </script>
+  </body>
+</html>

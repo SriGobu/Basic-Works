@@ -1,0 +1,47 @@
+<!-- create a copy of the cart quantity project from excersice 6l -->
+<!-- create a function 'updateCerQuantity' and reuse the code -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5j</title>
+  </head>
+  <body>
+    <p>Cart Quantity</p>
+
+    <button onclick="console.log(`cart Quantity : ${cartQuantity}`)">
+      Show Quantity
+    </button>
+    <button onclick="updateCartQuantity(1)">Add To Cart</button>
+    <button onclick="updateCartQuantity(2)">+2</button>
+    <button onclick="updateCartQuantity(3)">+3</button>
+    <button onclick="updateCartQuantity(4)">+4</button>
+    <button onclick="updateCartQuantity(5)">+5</button>
+    <button
+      onclick="updateCartQuantity(-cartQuantity);
+      console.log('cart was reset');
+      console.log(`cart Quantity : ${cartQuantity}`);"
+    >
+      Reset Cart
+    </button>
+    <button onclick="updateCartQuantity(-1);">Remove from cart</button>
+    <button onclick="updateCartQuantity(-2);">-2</button>
+    <button onclick="updateCartQuantity(-3);">-3</button>
+
+    <script>
+      let cartQuantity = 0; //  case -- 02:24:33 -- 02:26:10 //
+
+      function updateCartQuantity(value) {
+        cartQuantity += value;
+        console.log(`cart quantity : ${cartQuantity}`);
+        if (cartQuantity <= 0) {
+          alert(`Not enough items in the cart and don't update the quantity`);
+        } else {
+          alert(` you can update the quantity`);
+        }
+      }
+    </script>
+  </body>
+</html>

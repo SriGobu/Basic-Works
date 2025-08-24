@@ -1,0 +1,33 @@
+<!-- create a function ' convertLength(length,from.to)' that takes a number and a unit ('km' or 'miles' ) and converts the length to another unit ('km' or 'miles') -->
+<!-- note: 1mile  = 1.6km (approximately) -->
+<!-- convertlength(50,'miles','km') -->
+<!-- convertlength(32,'km','miles') -->
+<!-- convertlength(50,'km','km') -->
+
+<!-- if you convert from miles to km multiply by 1.6 -->
+<!-- if you convert from km to miles divide by 1.6 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>7g</title>
+  </head>
+  <body>
+    <script>
+      function convertLength(Length, from, to) {
+        if ((from === "miles") && (to === "km")) {
+          return `${Length * 1.6}km`;
+        } else if ((from === "km") && (to === "miles")) {
+          return `${Length / 1.6}miles`;
+        } else if (from === to) {
+          return `${length}${to}`;
+        }
+      }
+      console.log(convertLength(50, "miles", "km"));
+      console.log(convertLength(32, "km", "miles"));
+      console.log(convertLength(50,"km","km"));
+    </script>
+  </body>
+</html>
+
