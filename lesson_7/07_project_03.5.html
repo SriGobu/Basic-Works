@@ -25,7 +25,7 @@
   </head>
   <body>
     <p>Rock Paper Scissors</p>
-    <button onclick="playGame('rocks')">Rock</button>
+    <button onclick="playGame('rock')">Rock</button>
     <button onclick="playGame('paper')">Paper</button>
     <button onclick="playGame('scissors')">Scissors</button>
 
@@ -35,24 +35,24 @@
         let result = '';
 
         if (playerMove === "scissors") {
-          if (computerMove === "rock ") {
+          if (computerMove === "rock") {
             result = "you lose";
           } else if (computerMove === "paper") {
             result = "You win";
-          } else if (computerMove === "scissors") {
+          } else if (computerMove === playerMove) {
             result = "you tie";
           }
         } else if (playerMove === "paper") {
-          if (computerMove === "rock ") {
+          if (computerMove === "rock") {
             result = "you win";
-          } else if (computerMove === "paper") {
+          } else if (computerMove === playerMove) {
             result = "You tie";
           } else if (computerMove === "scissors") {
             result = "you lose";
           }
         } else if (playerMove === "rock") {
-          if (computerMove === "rock ") {
-            result = "Tie";
+          if (computerMove === playerMove) {
+            result = " you Tie";
           } else if (computerMove === "paper") {
             result = "You Lose";
           } else if (computerMove === "scissors") {
