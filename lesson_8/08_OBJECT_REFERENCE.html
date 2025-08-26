@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OBJECTS REFERENCE</title>
+</head>
+<body>
+  <script>
+        //objects are reference 05:12:05 - 05:18:20
+
+    const object1 = {
+      message:'hello'
+    }
+    //object1 is itself reference 
+    const object2 = object1;
+    //it just copies the reference that points to the  object
+
+    object1.message = 'good job!';
+    console.log(object1);
+    //even though we used the const we can change the values in the object
+    //because the object1 just contains the reference that points to the objects
+    //const prevents us from changing the reference in the variable 
+    //but doesn't prevent us from reaching the reference and changing the objects that is pointing 
+    console.log(object2);
+
+    const object3 = {
+      message:'Good Job!'
+    };
+
+    console.log(object3 == object1);
+    //it just compares the reference not the values inside 
+    //object3 is a different reference than object1
+    //that'y it becomes false
+    console.log(object2 === object1);
+    //object2 has the same reference as object1
+    //it points to the same reference 
+  </script>
+</body>
+</html>

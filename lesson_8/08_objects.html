@@ -1,0 +1,76 @@
+<!-- lesson 08 -- Objects -->
+<!-- objects -- an object groups multiple values together -->
+<!--            an object use multiple values together -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>objects</title>
+</head>
+<body>
+  <script>
+    /*
+    const product = {
+      name:'socks', //name -- property //socks -- value
+      price:1090,
+    };
+
+    console.log(product);
+    console.log(product.name); // product.name -- by using this we get the name property that is inside the product
+    console.log(product.price);
+
+    product.name = 'cotton socks'; // product.name -- by using this we can add a new value to a same property
+    console.log(product);
+
+    product.newProperty = true; // product.newProperty -- by using this we can create a new property and a new value in a same object
+    console.log(product);
+
+    delete product.newProperty; // delete product.newProperty is used to delete an particular property 
+    console.log(product);
+    */
+
+    const product2 = {
+      name:'shirt',
+      'delivery-time': '1 day',
+      // inside an object we can save any type of value
+      // an object itself is an value
+      rating: { // nested object
+        stars: 4.5,
+        count: 87
+      },
+      // we can store a function inside an object 
+      // when we save function inside a object it is called as METHOD
+      fun: function function1() { 
+        console.log('function inside object')
+      }
+    }
+    console.log(product2);
+    console.log(product2.name);
+
+    console.log(product2['name']);
+    // product2['name'] -- bracket notatin //
+    // bracket notation -- lets us use properties that dont'work with dot notation //
+    console.log(product2['delivery-time']);
+
+    // you can see the difference by seeing the output of these two
+    // console.log(product2['deliver-time']);    
+    // console.log(product2.delivery-time);
+
+    console.log(product2.rating);
+
+    product2.fun()
+
+    console.log(typeof console.log);
+    // console -- is an object
+    // log -- is an function
+    // when we use the console.log -- it will use the function (log) that is inside the object (console)
+    // ex : math.random() 
+    // math -- is an object 
+    // random -- is an function 
+    // when we use the math.random() -- it will use the function (random) that is inside the object (math) 
+
+  </script>
+</body>
+</html>

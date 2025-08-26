@@ -1,0 +1,65 @@
+<!-- JSON -- javaScript Object Notation -->
+<!-- JSON -- (is a built in object) -->
+<!-- it is an syntax
+     similar to javaScript object 
+     but has less features -->
+<!-- JSON values must encolsed within double("")quotes 
+     JSON will not supprt a function inside of it  -->
+
+<!-- example of JSON
+  
+{
+"name":"shirt",
+"delivery-time":"1 day",
+"rating": {
+  "stars": 4.5,
+  "count": 87
+  }
+}
+
+-->
+
+<!-- built in JSON object 
+     convert:
+     javaScript Object => JSON -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON</title>
+</head>
+<body>
+    <script>
+    const product2 = {
+      name:'shirt',
+      'delivery-time': '1 day',
+      rating: { 
+        stars: 4.5,
+        count: 87
+      },
+      fun: function function1() { 
+        console.log('function inside object')
+      }
+    }
+    console.log(product2);
+    console.log(product2.name);
+    console.log(product2['name']);
+    console.log(product2['delivery-time']);
+    console.log(product2.rating.count);
+    product2.fun()
+    console.log(typeof console.log);
+
+    // JSON.stringify -- is used to convert object to string 
+    // it will not show the function that is in the object because JSON will not allow function 
+    console.log(JSON.stringify(product2));
+
+    const jsonString = JSON.stringify(product2);
+
+    // JSON.parse() -- is used to convert string to object
+    console.log(JSON.parse(jsonString));
+
+  </script>
+</body>
+</html>
