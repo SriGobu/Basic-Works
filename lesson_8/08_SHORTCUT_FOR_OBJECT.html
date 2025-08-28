@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHORTCUT FOR OBJECTS</title>
+</head>
+<body>
+  <script>
+
+    // destructor shortcut
+    // easier way to take properties out of an object
+
+    const object4 = {
+      message:'good job!',
+      price:799
+    }
+
+    // const message = object4.message;
+
+    const { message,price } = object4;
+
+    // { message } -- this shortcut is called destructor
+    // this will take the message property out of the object4 and save it in a variable called message 
+    
+    // destructor for multiple properties 
+    // by using comma we can add more property to it
+    // const { message,price } = object4; -- like this
+    console.log(message);
+    console.log(price);
+
+    // shorthand for property 
+
+    const object5 = {
+      // message : message
+      // we can even assign a variable as a value to the property
+      message 
+      // if the property name and value name are same we can give it as one 
+    }
+
+    console.log(object5);
+
+    // shorthand method 
+
+    const object6 = {
+
+      // method : function function1() {
+      //   console.log('first method')
+      // } 
+
+      method () {
+        console.log('second method')
+      }
+      // by using this shorthand we don't need the function name  
+    }    
+
+    object6.method();
+
+
+
+  </script>
+</body>
+</html>

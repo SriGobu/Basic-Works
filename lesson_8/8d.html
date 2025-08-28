@@ -1,0 +1,32 @@
+<!-- create a function 'comparePrice(product1,product2)',which takes 2 products (with'name' and 'price' properties) and returns the product that s less expensive.create 2 products and try out the function -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>8d</title>
+  </head>
+  <body>
+    <script>
+      let product1 = {
+        name : 'BasketBall',
+        price : 3000
+      }
+      let product2 = {
+        name : 'FootBall',
+        price : 1500
+      }
+
+      function comparePrice(product1,product2) {
+        
+        if (product1 < product2) {
+          return product1
+        } else {
+          return product2
+        }
+      }
+      console.log(comparePrice(product1,product2));
+    </script>
+  </body>
+</html>

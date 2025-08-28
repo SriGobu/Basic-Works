@@ -9,8 +9,16 @@
   <script>
         //objects are reference 05:12:05 - 05:18:20
 
+        //when you create a object,javascript stores it somewhere in memory(like giving it a house address )
+        //the variables doesn't hold the object directly it just holds the address (reference) of that object
+
+        //if we created a object and asssign a value it is stored in a address and the variable holds the reference of the value's address
+        //but when we created an another object and give the same value as the first it will also store in a address and the variable holds the reference of it
+        //when we compare the two objects it compares the reference (address) of the values 
+
     const object1 = {
-      message:'hello'
+      message:'hello'//this is a reference value
+      //the actual value is created somewhere in the computer's memory and this variable actually just gets a reference that point to that location in the computer's memory
     }
     //object1 is itself reference 
     const object2 = object1;
@@ -35,6 +43,10 @@
     console.log(object2 === object1);
     //object2 has the same reference as object1
     //it points to the same reference 
+
+    //when we compare two objects 
+    //we are comparing only the reference not the values
+
   </script>
 </body>
 </html>
