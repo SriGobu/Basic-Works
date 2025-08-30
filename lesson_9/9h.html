@@ -1,0 +1,24 @@
+<!-- let's create the project on the right: -->
+<!-- whenever we type in the text box,update the text on the page. -->
+<!-- to do this, we'll learn another event called = <input onkeyup=''>  -->
+<!-- this runs code after we press a key and release it (key comes up) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9h</title>
+</head>
+<body>
+  <input type="text" class="js_input" placeholder="Type Something" onkeyup="keyup();">
+  <p></p>
+  <script>
+
+    function keyup(event) {
+    let inputElement = document.querySelector('.js_input').value;
+    document.querySelector('p').innerHTML = inputElement;
+    }
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!-- create a text box (<input>) and a submit button.when clicking 'submit',display 'your name is : ${text}' on the page (${text} = the text inside the text box) -->
+<!-- (hint: use.value to get the text inside and <input>) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9d</title>
+</head>
+<body>
+  <input placeholder="Name">
+  <button onclick="submit()">Submit</button>
+  <p></p>
+  <script>
+    function submit() {
+      let text = document.querySelector('input').value;
+      document.querySelector('p').innerHTML=`Your Name is : ${text}`;
+    }
+  </script>
+</body>
+</html>

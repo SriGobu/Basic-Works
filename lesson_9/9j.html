@@ -1,0 +1,71 @@
+<!-- we'll improve the Calculator project -->
+<!-- Make a copy of excersice 8h -->
+<!-- Whenever we update the calculation, display it on the page instead of in the console -->
+<!-- When the page first loads, if a calculation exists in localStorage, display it on the page -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>7j</title>
+  </head>
+  <body>
+    <p>
+      <button onclick="updateCalculation(1);">1</button>
+      <button onclick="updateCalculation(2);">2</button>
+      <button onclick="updateCalculation(3);">3</button>
+    </p>
+    <p>
+      <button onclick="updateCalculation(4);">4</button>
+      <button onclick="updateCalculation(5);">5</button>
+      <button onclick="updateCalculation(6);">6</button>
+    </p>
+    <p>
+      <button onclick="updateCalculation(7);">7</button>
+      <button onclick="updateCalculation(8);">8</button>
+      <button onclick="updateCalculation(9);">9</button>
+    </p>
+    <button onclick="updateCalculation(' + ');">+</button>
+    <button onclick="evalCalculation();">=</button>
+    <button onclick="eraseCalculation();">c</button>
+    <p class="js_view"></p>
+    <p class="js_newView"></p>
+    <script>
+      let calculation = "";
+      function updateCalculation(value) {
+        calculation += value;
+        console.log(calculation);
+        view()
+      }
+
+      function evalCalculation() {
+        let total = eval(calculation);
+        if (!total == "") {
+          const set1 = localStorage.setItem(
+            "evaluation",
+            JSON.stringify(total)
+          );
+          console.log('NUMBER FOUND');
+        } else {
+          console.log('NO NUMBER FOUND')
+        }
+        document.querySelector('.js_newView').innerHTML=total;
+      }
+
+      let get1 = JSON.parse(localStorage.getItem("evaluation"));
+      console.log(get1);
+
+      function eraseCalculation() {
+        let erase = localStorage.removeItem("evaluation");
+        console.log("NO VALUE FOUND", erase);
+      }
+
+      function view() {
+        let viewElement = document.querySelector('.js_view');
+        viewElement.innerHTML = calculation;
+      }
+
+    </script>
+  </body>
+</html>
