@@ -1,0 +1,57 @@
+<!-- we'll improve the coin flip game from excersice 6j to be like the rock paper scissors game -->
+<!-- copy the code from excersice 6j(see the solution for 6j if needed) -->
+<!-- create 2 buttons to play the game -->
+<!-- when clicking the 'heads' play the game with guess = 'heads' -->
+<!-- when clicking the 'tails' play the game with guess = 'tails' -->
+<!-- create a function 'playGame(guess)' to reuse the code -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>8i</title>
+  </head>
+  <body>
+    <button onclick="playGame('Heads')">Heads</button>
+    <button onclick="playGame('Tails')">Tails</button>
+    <script>
+      let random = Math.random();
+      let result = "";
+      if (random < 0.5) {
+        result = "Heads";
+      } else if (random > 0.5) {
+        result = "Tails";
+      }
+
+      let score = {
+        wins: 0,
+        loss: 0,
+        life: 10,
+      };
+      function playGame(guess) {
+        let check = guess;
+        if (check === result) {
+          console.log(
+            `you choose ${check},computer choose ${result}`,
+            "you Win!"
+          );
+          score.wins += 1;
+          console.log(score);
+        } else {
+          console.log(
+            `you choose ${check},computer choose ${result}`,
+            "you Lose!"
+          );
+          score.loss += 1;
+          score.life -= 1;
+          console.log(score);
+        }
+
+        if (score.life < 0) {
+          alert("GAME OVER");
+        }
+      }
+    </script>
+  </body>
+</html>

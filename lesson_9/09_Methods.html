@@ -1,0 +1,29 @@
+<!-- Method - function saved inside an object -->
+<!-- when an HTML is inside the javaScript it will become a javaScript object -->
+<!-- when the html element becames a javaScript object  -->
+<!-- object is a value and we can store it in a variable -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Methods Of Dom</title>
+</head>
+<body>
+  <button>Hello</button>
+  <button class="js-button">Second Button</button>
+  <script>
+
+    // 1 - document.querySelector() 
+    // let us get any element from the page and put it inside javaScript
+    // it will get only the first element 
+    console.log(document.querySelector('button').innerHTML);
+    document.querySelector('button').innerHTML='Changed';
+
+    // class attribute
+    const buttonElement = document.querySelector('.js-button');
+    console.log(buttonElement);
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!-- click , keydown -- is a event  -->
+<!-- onclick , onkeydown -- is a event listeners -->
+<!-- for example -- if click is a event that is going to happen and onclick is eventListener that tells what to do when an event occurs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MINI AMAZON</title>
+</head>
+<body>
+  <p>Amazon Shipping Calculator</p>
+  <input placeholder="Cost Of Order" class="js-cost-input" onkeydown="handleCostKeydown(event);">
+  <button onclick="calculateTotal();">Calculate</button>
+  <p class="js-total-cost"></p>
+  <script>
+
+    function handleCostKeydown (event) {
+      console.log(event.key);
+  if(event.key === 'Enter') {  // by using event.key - we can get the key that we pressed 
+    calculateTotal();
+  }
+    }
+    function calculateTotal() {
+      const inputElement = document.querySelector('.js-cost-input');
+      let cost = Number(inputElement.value) //by using this is how we get the text inside a text box
+      //.value - by using  it gives the text that is inside the text box
+      // whenever we get a value from the DOM , the value will be a string
+      // if we want to do math with it we have to manually convert this value into number  
+      if (cost < 40) {
+        cost = Number(cost + 10);
+        console.log(cost);
+      }
+
+      document.querySelector('.js-total-cost').innerHTML = `$${cost}`;
+    }
+  </script>
+</body>
+</html>

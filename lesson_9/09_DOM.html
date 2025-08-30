@@ -1,0 +1,42 @@
+<!-- DOM - it is an another built in object -->
+<!-- the document object represents / modals the webpage -->
+<!-- the DOM combines javaScript and HTML together -->
+<!-- when an HTML element inside the javaScript -->
+<!-- the HTML element is converted into a javaScript object -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+</head>
+<body>
+  <button>Hello</button>
+  <script>
+    console.log(document.title);
+    document.title='changed';
+
+    console.log(document.body);
+    console.log(typeof document.body);
+    // when the DOM is inside the javaScript it will be a object
+
+    console.log(document.body.innerHTML);
+    document.body.innerHTML = 'Changed';
+
+    document.body.innerHTML='<button>Good Job!</button>';
+
+    /*
+    document.body.innerHTML='hello';
+    // document is a object
+    // by using . notation we are getting inside the document object
+    // now we are acessing the body object
+    // by using . notation we are getting inside the document object
+    // now we are acessing the innerHtml and change it into 'Hello'
+    document.title='Good Job!';
+    */
+
+  </script>
+</body>
+</html>
