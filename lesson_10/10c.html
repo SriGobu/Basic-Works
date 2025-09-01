@@ -1,0 +1,33 @@
+<!-- classList has anotehr method, classList.contains('class-name'),
+ which checks if an element has a class -->
+<!-- create a button: <button class="js_button">Test</button> -->
+<!-- Use document.querySelector()and classList.contains('js_button') 
+ to check if this button has the class 'js_button' -->
+<!-- console.log() the result -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10c</title>
+  <style>
+    .js-button{
+      background-color: red;
+      color:white;
+      padding:5px 10px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight:bold;
+      cursor: pointer;
+      border:none;
+      border-radius: 7.5px;
+    }
+  </style>
+</head>
+<body>
+  <button class="js-button">Test</button>
+  <script>
+    let testButton = document.querySelector('.js-button')
+    console.log(testButton.classList.contains('js-button'));
+  </script>
+</body>
+</html>

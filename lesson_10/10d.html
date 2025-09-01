@@ -1,0 +1,41 @@
+<!-- create the button on the right. when clicking this button,it should turn ON/OFF.Hints -->
+<!-- When clicking the button, add or remove the class 'is-toggled', and use it to change the styling -->
+<!-- Use if (classList.contains('is-toggled')) to decide whether to add or remove the 'is-toggled' class -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10d</title>
+    <style>
+      .is-toggled {
+        padding: 8px;
+        border: none;
+        cursor: pointer;
+        font-family: Arial, Helvetica, sans-serif;
+        border-radius: 5px;
+      }
+
+      .iss-toggled {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <button
+      class="is-toggled"
+      onclick="
+let gamingButton = document.querySelector('.is-toggled')
+
+if (gamingButton.classList.contains('iss-toggled')) {
+          gamingButton.classList.remove('iss-toggled')
+        } else {
+          gamingButton.classList.add('iss-toggled');
+        }
+      "
+    >
+      Gaming
+    </button>
+  </body>
+</html>

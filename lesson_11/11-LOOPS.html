@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOOPS</title>
+</head>
+<body>
+  <script>
+
+    // WHILE LOOP => use for non-standard loop
+
+    let i = 1; // i = 1 => initial value to the loop or starting value for the loop
+    while (i <=5) { // condition true =>runs forever || condition false =>it will not run
+      // console.log(i); // the body of the loop and the value to be print when the condition is true
+      i++; // => the next value to the incremented
+    }
+
+    // FOR LOOP => use for standard loop
+
+    for (let i=1;i<=5;i++) {
+      // console.log(i);
+    }
+
+    //genereate randomnumbers until one that's at least 0.5
+
+    let randomNumber = 0;
+    while (randomNumber < 0.5) {
+      randomNumber = Math.random(); 
+    }                         
+    console.log(randomNumber);
+    //this is a non-standard loop
+    //it doesn't have a loop variable that we increase every time 
+    //it also doesn't have the increment step 
+
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrays and Loops</title>
+  </head>
+  <body>
+    <script>
+      // Arrays - another type of values
+      // represents a list of values
+      // array itself is a value
+      // it can store different types of values in it
+      // an array is an object
+      // it is a apecial type of object
+      const myArray = [10, 20, 30];
+      console.log(myArray);
+
+      console.log(myArray[0]); // 0 -> represents the position of a value in the array
+
+      myArray[0] = 99;
+      console.log(myArray);
+      [1, "hello", true, { name: "socks" }, [1, 2]];
+      console.log(typeof [1, 2]);
+
+      console.log(Array.isArray([1, 2])); // Array.isArray([1, 2])=> it will check whether the given value is a Array or not
+
+      console.log(myArray.length);
+
+      // .push => Adds a value to the end of the array
+      myArray.push(110);
+      console.log(myArray);
+
+      // .spice => Removes a value from an array
+      // it takes two numbers
+      // the first number is the index we want to remove
+      // the second number is the Number of values we want to remove
+      myArray.splice(0,2);
+      console.log(myArray);
+    </script>
+  </body>
+</html>

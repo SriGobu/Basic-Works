@@ -1,0 +1,43 @@
+      * {
+        background-color: black;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .buttons {
+        background-color: #333333;
+        color: #ffff;
+        width: 60px;
+        height: 60px;
+        font-size: 26px;
+        border-radius: 60px;
+        border: none;
+        cursor: pointer;
+      }
+
+      .cal-buttons {
+        background-color: #fea00a;
+        color: #ffff;
+        width: 60px;
+        height: 60px;
+        font-size: 26px;
+        border-radius: 60px;
+        border: none;
+        cursor: pointer;
+      }
+
+      .para-value {
+        font-size: 45px;
+        margin: 10px 0px 5px;
+        color: whitesmoke;
+      }
+
+      .clear_buttons {
+        background-color: #333333;
+        color: #ffff;
+        width: 55px;
+        height: 55px;
+        font-size: 20px;
+        border-radius: 60px;
+        border: none;
+        cursor: pointer;
+      }

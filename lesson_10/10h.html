@@ -1,0 +1,33 @@
+<!-- create a file 10h.html and copy the code from 10-dom-projects.html.in the Amazon Shipping Calculator, if we type a number less than 0, display a re error message below the text box: -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MINI AMAZON</title>
+    <link rel="stylesheet" href="10h.css">
+  </head>
+  <body>
+    <p>YouTube Subscribe Button</p>
+    <button
+      onclick="Subscribe();
+  "
+      class="js-Subscribe-button subscribe-button" 
+    >
+      Subscribe
+    </button> 
+    <!-- innerText = it will get the text without the memory space -->
+    <p>Amazon Shipping Calculator</p>
+    <input
+      placeholder="Cost Of Order"
+      class="js-cost-input cost-input"
+      onkeydown="handleCostKeydown(event);"
+    />
+
+    <button onclick="calculateTotal();" class="calculate-button">Calculate</button>
+    <p class="js-total-cost"></p>
+    <p class="js-select js-red-text"></p>
+
+    <script src="10h.js"></script>
+  </body>
+</html>

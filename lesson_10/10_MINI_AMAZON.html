@@ -1,0 +1,102 @@
+<!-- click , keydown -- is a event  -->
+<!-- onclick , onkeydown -- is a event listeners -->
+<!-- for example -- if click is a event that is going to happen and onclick is eventListener that tells what to do when an event occurs -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MINI AMAZON</title>
+    <style>
+
+      body{
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .subscribe-button{
+        /* {} - block || object - property || none - value */
+        border:none;
+        background-color: black;
+        color:white;
+        padding:10px 15px 10px 15px;
+        border-radius:20px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-bottom: 30px;
+      }
+
+      .is-subscribed{
+        background-color: rgb(240,240,240);
+        color:black;
+      }
+
+      .cost-input{
+        font-size: 15px;
+        padding:10px;
+      }
+
+      .calculate-button{
+        padding:12px 15px;
+        background-color: green;
+        border: none;
+        font-size:15px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <p>YouTube Subscribe Button</p>
+    <button
+      onclick="Subscribe();
+  "
+      class="js-Subscribe-button subscribe-button" 
+    >
+      Subscribe
+    </button> 
+    <!-- innerText = it will get the text without the memory space -->
+    <p>Amazon Shipping Calculator</p>
+    <input
+      placeholder="Cost Of Order"
+      class="js-cost-input cost-input"
+      onkeydown="handleCostKeydown(event);"
+    />
+    <button onclick="calculateTotal();" class="calculate-button">Calculate</button>
+    <p class="js-total-cost"></p>
+    <script>
+      function handleCostKeydown(event) {
+        console.log(event.key);
+        if (event.key === "Enter") {
+          // by using event.key - we can get the key that we pressed
+          calculateTotal();
+        }
+      }
+      function calculateTotal() {
+        const inputElement = document.querySelector(".js-cost-input");
+        let cost = Number(inputElement.value); //by using this is how we get the text inside a text box
+        //.value - by using  it gives the text that is inside the text box
+        // whenever we get a value from the DOM , the value will be a string
+        // if we want to do math with it we have to manually convert this value into number
+        if (cost < 40) {
+          cost = Number(cost + 10);
+          console.log(cost);
+        }
+
+        document.querySelector(".js-total-cost").innerHTML = `$${cost}`;
+      }
+
+      function Subscribe() {
+        const buttonElement = document.querySelector(".js-Subscribe-button");
+
+
+        if (buttonElement.innerText === "Subscribe") {
+          buttonElement.innerHTML = "Subscribed";
+        buttonElement.classList.add('is-subscribed');
+        // by using the classList.add we can add a class 
+        } else {
+          buttonElement.innerHTML = "Subscribe";
+          buttonElement.classList.remove('is-subscribed');
+        }
+      }
+    </script>
+  </body>
+</html>

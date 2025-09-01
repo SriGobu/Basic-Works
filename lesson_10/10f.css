@@ -1,0 +1,15 @@
+    .off-button,
+    .two-off-button,
+    .three-off-button{
+        padding: 8px;
+        border: none;
+        cursor: pointer;
+        font-family: Arial, Helvetica, sans-serif;
+        border-radius: 5px;      
+    }
+    .on-button,
+    .two-on-button,
+    .three-on-button{
+        background-color: black;
+        color: white;      
+    }

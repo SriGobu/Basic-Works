@@ -1,0 +1,52 @@
+<!-- continuing from 10d,create 3 buttons that can be truned ON / OFF -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10e</title>
+  <style>
+    .off-button,
+    .two-off-button,
+    .three-off-button{
+        padding: 8px;
+        border: none;
+        cursor: pointer;
+        font-family: Arial, Helvetica, sans-serif;
+        border-radius: 5px;      
+    }
+    .on-button,
+    .two-on-button,
+    .three-on-button{
+        background-color: black;
+        color: white;      
+    }
+  </style>
+</head>
+<body>
+  <button class="off-button" onclick="
+  let gamingButtton = document.querySelector('.off-button');
+  if (gamingButtton.classList.contains('on-button')) {
+    gamingButtton.classList.remove('on-button');
+  }else{
+    gamingButtton.classList.add('on-button');
+  }
+    ">Gaming</button>
+  <button class="two-off-button" onclick="
+  let musicButton = document.querySelector('.two-off-button');
+  if (musicButton.classList.contains('two-on-button')) {
+    musicButton.classList.remove('two-on-button');
+  }else{
+    musicButton.classList.add('two-on-button');
+  }
+    ">Music</button>
+  <button class="three-off-button" onclick="
+  let techButton = document.querySelector('.three-off-button');
+  if (techButton.classList.contains('three-on-button')) {
+    techButton.classList.remove('three-on-button');
+  }else{
+    techButton.classList.add('three-on-button');
+  }
+    ">Tech</button>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!-- we'll style the calculator project using css. -->
+<!-- make a copy of excersice 9j -->
+<!-- in your browser, go to: 
+supersimple.dev/projects/calculator-final 
+this is the final design for the project -->
+<!-- using css,style the calculator project to look like the final design on the right -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10i</title>
+    <style>
+      * {
+        background-color: black;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .buttons {
+        background-color: #333333;
+        color: #ffff;
+        width: 60px;
+        height: 60px;
+        font-size: 26px;
+        border-radius: 60px;
+        border: none;
+        cursor: pointer;
+      }
+
+      .cal-buttons {
+        background-color: #fea00a;
+        color: #ffff;
+        width: 60px;
+        height: 60px;
+        font-size: 26px;
+        border-radius: 60px;
+        border: none;
+        cursor: pointer;
+      }
+
+      .para-value {
+        font-size: 45px;
+        margin: 10px 0px 5px;
+        color: whitesmoke;
+      }
+
+      .clear_buttons {
+        background-color: #333333;
+        color: #ffff;
+        width: 55px;
+        height: 55px;
+        font-size: 20px;
+        border-radius: 60px;
+        border: none;
+        cursor: pointer;
+      }
+
+    </style>
+  </head>
+  <body>
+    <p class="js_view para-value"></p>
+    <!-- <p class="js_newView para-value"></p> we if you want the each code to displayed you can use this else don't use this  -->
+
+    <p>
+      <button onclick="updateCalculation(1);" class="buttons">1</button>
+      <button onclick="updateCalculation(2);" class="buttons">2</button>
+      <button onclick="updateCalculation(3);" class="buttons">3</button>
+      <button onclick="updateCalculation(' + ');" class="cal-buttons">+</button>
+    </p>
+    <p>
+      <button onclick="updateCalculation(4);" class="buttons">4</button>
+      <button onclick="updateCalculation(5);" class="buttons">5</button>
+      <button onclick="updateCalculation(6);" class="buttons">6</button>
+      <button onclick="updateCalculation(' - ');" class="cal-buttons">-</button>
+    </p>
+    <p>
+      <button onclick="updateCalculation(7);" class="buttons">7</button>
+      <button onclick="updateCalculation(8);" class="buttons">8</button>
+      <button onclick="updateCalculation(9);" class="buttons">9</button>
+      <button onclick="updateCalculation(' * ');" class="cal-buttons">*</button>
+    </p>
+
+    <p>
+      <button onclick="updateCalculation(0);" class="buttons">0</button>
+      <button onclick="updateCalculation('.');" class="buttons">.</button>
+      <button onclick="evalCalculation();" class="buttons">=</button>
+      <button onclick="updateCalculation(' / ');" class="cal-buttons">/</button>
+    </p>
+
+    <button onclick="eraseCalculation(); document.querySelector('.js_view').innerHTML='';" class="clear_buttons">clear</button>
+
+    <script>
+      let calculation = "";
+      function updateCalculation(value) {
+        if ((value <= 9 && value >= 0) || (!value <= 9 && !value >= 0)) {
+          calculation += value;
+          view();
+        }
+      }
+
+      function evalCalculation() {
+        let total = eval(calculation);
+        localStorage.setItem("evaluation",JSON.stringify(total));
+        document.querySelector(".js_view").innerHTML = total;
+      }
+
+      let get1 = JSON.parse(localStorage.getItem("evaluation"));
+      console.log(get1);
+
+      function eraseCalculation() {
+        let erase = localStorage.removeItem("evaluation");
+      }
+
+      function view() {
+        let viewElement = document.querySelector(".js_view");
+        viewElement.innerHTML = calculation;
+      }
+    </script>
+  </body>
+</html>
