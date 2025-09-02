@@ -1,0 +1,28 @@
+<!-- create a function addArrays(array1,array2) that takes 2 arrays of numbers and adds each number in the arrays together -->
+<!-- addArrays([1,1,2],[1,1,3]) => [2,2,5] -->
+<!-- addArrays([1,2,3],[4,5,6]) => [5,7,9] -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11j</title>
+</head>
+<body>
+  <script>
+    function addArrays(array1,array2) {
+      let newArray = [];
+      for(let i=0;i<=array1.length-1;i++) {
+        if(!array1[i] == '' && !array2[i] == '') {
+          newArray.push(array1[i]+array2[i]);
+        } else {
+          console.log('hi');
+        }
+      }
+      return newArray
+    }
+    console.log(addArrays([1,1,2],[1,1,3]));
+    console.log(addArrays([1,2,3],[4,5,6]));
+  </script>
+</body>
+</html>

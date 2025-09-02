@@ -1,0 +1,28 @@
+<!-- Create a function countWord(words) that takes an array of strings and return an object with how many times each string appeared. -->
+<!-- countWords(['apple','grape','apple','apple']) => {apple:3,grapes:1} -->
+<!-- (Hint:you can access a property using a variable:object[variable]; This uses the value inside the varibale as the property name) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11n</title>
+</head>
+<body>
+  <script>
+    function countWords(words){
+    const value = {}
+      for (i=0;i<=words.length-1;i++) {
+        const word = words[i];
+        if (!value[word]) {
+          value[word] = 1;
+        } else {
+          value[word]++;
+        }
+      }
+      return value
+    }
+    console.log(countWords(['apple','grape','apple','apple']));
+  </script>
+</body>
+</html>

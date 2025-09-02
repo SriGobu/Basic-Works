@@ -1,0 +1,26 @@
+<!-- create a function addNum(array,num) that takes an array of numbers and returns an array where each number is increased by 'num' -->
+<!-- addNum([1, 2, 3],2) => [3, 4, 5] -->
+<!-- addNum([1, 2, 3],3) => [4, 5, 6] -->
+<!-- addNum([-2, -1, 0, 99],2) => [0, 1, 2, 101] -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11i</title>
+</head>
+<body>
+  <script>
+    function addNum(array,num){
+      let newArray = [];
+      for(i=0;i<=array.length-1;i++){
+        newArray.push(array[i]+=num)
+      }
+      return newArray
+    }
+    console.log(addNum([1, 2, 3],2));
+    console.log(addNum([1, 2, 3],3));
+    console.log(addNum([-2, -1, 0, 99],2));
+  </script>
+</body>
+</html>

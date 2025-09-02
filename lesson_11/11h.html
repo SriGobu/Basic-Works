@@ -1,0 +1,26 @@
+<!-- create a function addOne(array) that takes an array of numbers and return an array where each number is increased by 1 -->
+<!-- addOne([1, 2, 3]) => [2, 3, 4] -->
+<!-- addOne([-2, -1, 0, 99]) => [-1, 0, 1, 100] -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11h</title>
+</head>
+<body>
+  <script>
+    function addOne(array) {
+      let newArray = [];
+      //by creating a array inside the function we can add the values into it 
+      for(i=0;i<=array.length-1;i++){
+        newArray.push(array[i]+=1);
+      }
+      console.log(newArray);
+    }
+    addOne([1, 2, 3]);
+    addOne([-2, -1, 0, 99]);
+    
+  </script>
+</body>
+</html>
