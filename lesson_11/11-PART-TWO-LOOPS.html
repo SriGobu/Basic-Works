@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PART-TWO-LOOPS</title>
+  </head>
+  <body>
+    <script>
+      /*break => lets us end the loop early*/
+      /*      for (i = 1; i <= 10; i++) {
+        console.log(i);
+        if (i === 8) {
+          break;
+        }
+      }*/
+      /*continue => lets us skip 1 iteration*/
+      /*      for (i = 1; i <= 10; i++) {
+        if (i % 3 === 0) {
+          continue;
+        }
+          console.log(i);
+      }*/
+
+      /*  while => */
+      /*
+      let i = 0;
+      while (i <= 10) {
+        if (i % 3 === 0) {
+          i++;
+          continue; 
+        }
+      }
+      console.log(i);
+      i++;
+*/
+      /*when using continue in while loop we have to manually give the iteration*/
+      /*because  continue will skip the iteration*/
+
+      function doubleArray(nums) {
+        const numsDoubled = [];
+        for (let i = 0; i < nums.length; i++) {
+          const num = nums[i];
+          if (num === 0) {
+            return numsDoubled;
+          }
+          numsDoubled.push(num * 2);
+        }
+        return numsDoubled
+      }
+      console.log(doubleArray([1, 1, 3]));
+      console.log(doubleArray([2, 2, 5, 0, 5]));
+    </script>
+  </body>
+</html>

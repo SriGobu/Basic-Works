@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PART - 2 ARRAYS AND LOOPS</title>
+</head>
+<body>
+  <script>
+    /*Arrays are References*/
+    const array1 = [1, 2, 3];/*[1, 2, 3] => these elements are stored somewhere in the computer*/
+    /*array1 => this variable takes the reference of the values*/
+    const array2 = array1.slice(); /*array2 => it not contains the value*/
+    /*it just contains the reference of the value*/
+    array2.push(4);
+    console.log(array1);
+    console.log(array2);
+    /*even though we pushed the value to the array2 the value is also stored in the array1*/
+    /*that's because arrays are reference so both of these point to the same array in the memory*/
+
+    /*to avoid this we have to use slice()*/
+    /*const array2 = array1.slice();*/
+    /*by using this will copy the values in the array1*/
+
+    /*Destructing*/
+    const [firstValue,secondValue] = [1, 2, 3];/* [firstValue,secondValue] => by using this we can store the firstValue in the array to be stored in a seperate variable , same for all elements in the array*/
+    console.log([firstValue,secondValue]);
+
+  </script>
+</body>
+</html>

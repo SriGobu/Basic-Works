@@ -1,0 +1,44 @@
+<!-- Create a function removeEgg(foods) that takes an array of strings and returns an array where the string 'egg' is removed.(hint: loop through the array and check if each string is 'egg'.if it is 'egg', use 'continue;' to skip it. if it's nit 'egg', add it to the result ) -->
+<!-- removeEgg(['egg','apple','egg','egg','ham']) => ['apple','ham'] -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11r</title>
+</head>
+<body>
+  <script>
+/*    function removeEgg(foods) {
+      let result = [];
+      for(let i = 0;i<=foods.length-1;i++) {
+        if (foods[i] === 'egg') {
+          continue;
+          i++;
+        } else {
+          result.push(foods[i]);
+        }
+      }
+      return result
+    }
+    console.log(removeEgg(['egg','apple','egg','egg','ham'])); */
+
+function removeEgg(foods) { // array i as index array j as elements inside array1
+      let result = [];
+      let count = 0
+      for(let i = 0;i<=foods.length-1;i++) {
+        let array1 = foods[i]
+        let array2 = i
+        console.log(array1,array2)
+        if (array1 === array2) {
+          count = count + 1;
+        } else {
+          result.push(foods[i]);
+        }
+      }
+      return count
+    }
+    console.log(removeEgg(['egg','apple','egg','egg','ham'])); 
+  </script>
+</body>
+</html>

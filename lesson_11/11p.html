@@ -1,0 +1,21 @@
+<!-- modify 11o so that if 'search' appears multiple times in the array, it will console.log() the index if the first appearence of 'search'.use break; -->
+<!-- ['hello','world','search','good','search'] => console.log(2)-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11p</title>
+</head>
+<body>
+  <script>
+    let words = ['hello','world','search','good','search'];
+    for(let i = 0;i<=words.length-1;i++){
+      if(words[i] === 'search'){
+        console.log(i);
+        break;
+      }
+    }
+  </script>
+</body>
+</html>

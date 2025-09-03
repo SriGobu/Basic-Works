@@ -1,0 +1,26 @@
+<!-- Create a function findIndex(array,word) that searches an array for a string (in the 'word' parameter) returns the index of the first appearence of the string. it is doesn't exist in the array, return -1 -->
+<!-- findIndex(['green','red','blue','red'],red) => 1 -->
+<!-- findIndex(['green','red','blue','red'],yellow) => -1 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11q</title>
+</head>
+<body>
+ <script>
+  function findIndex(array,word) {
+    let index = -1;
+    for (let i = 0; i <= array.length-1;i++) {
+      if(array[i] === word){
+        return i;
+      }
+    }
+    return index;
+  }
+  console.log(findIndex(['green','red','blue','red'],'red'));
+  console.log(findIndex(['green','red','blue','red'],'yellow'));
+ </script>
+</body>
+</html>
