@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADVANCED FUNCTIONS</title>
+</head>
+<body>
+  <script>
+    greeting(); /* Hosting => we can call the function before the function name */
+               /* Hosting won't work if we save the function in a variable */ 
+    function greeting() {
+      console.log('hello');
+    }
+    greeting(); /*calling the function or running the functions*/
+
+    /* Functions Are Values */ /* Function is a another type of value */
+
+    const num = 2;
+    const function1 = function (){ /* this is called as Anonymous Function - function without  a name */
+      console.log('hello 2');
+    }
+    console.log(function1);
+    console.log(typeof function1);
+    function1(); 
+
+    /*   We can save a value in the object */
+    const object1 = {
+      num: 2,
+      fun: function () { /* function inside the object is called method */
+        console.log('hello 3');
+      }
+    };
+    object1.fun(); /* for calling a function we have a use this () brackets */
+
+     function display(param) {
+      console.log(param);
+    }
+    display(2); /* passing values into the function */
+
+    /* CALL BACK FUNCTION */
+
+    function run(param) { /* passing a function as a value to another function */
+      param();
+    }
+    run(function(){
+      console.log('hello 4')
+    })
+
+    
+  </script>
+</body>
+</html>

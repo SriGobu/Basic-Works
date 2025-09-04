@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FILTER() AND MAP()</title>
+</head>
+<body>
+  <script>
+/*
+.filter() =>
+creates a new array []
+return true, => put value in array
+return false, => not put value in array     
+*/
+    console.log([1, -3, 5].filter((value, index) => {
+      // if (value >= 0) {
+      //   return true;
+      // } else {
+      //   return false;
+      // }
+
+      return value >=0;
+
+    }));
+
+/*
+.map() => 
+creates a new array []
+whatever we return => added to new array
+.map() = transform an array into another array based on the return value 
+
+value => the parameter that stores the value
+index => the index of the value
+it will take the value and save it in the parameter and run the function 
+*/
+
+    console.log([1, 1, 3].map((value,index) => {
+      return value * 2;
+    }));
+
+    console.log([1, 1, 3].map(value =>   value * 2 ));
+    
+/*
+closure =>
+if a function has access to a value
+it will always have access to that value
+values gets packaged together (enclosed) with the function 
+
+even though the loop ends 
+anytime we click the delete button the function still has the access of the index
+
+*/
+
+/*
+document.querySelectorAll('.js-delete-todo-button').forEach((deleteButton, index) => {
+  deleteButton.addEventListener('click', () => {
+    todoList.splice(index, 1);
+    renderTodoList();
+  });
+});
+*/
+
+/*
+
+as soon as we end the forEach loop the index doesn't exist anymore
+if we move into the inner function and console.log(index);
+even though the index gets deleted right away the loop ends
+we can still access the index by clicking the delete button later on
+
+*/
+
+  </script>
+</body>
+</html>

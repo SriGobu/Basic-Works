@@ -1,0 +1,27 @@
+<!-- update excersice 11r to only remove the first 1 eggs from the array. -->
+<!-- removeEgg(['egg''apple','egg','egg',ham]) => ['apple','egg','ham'] -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11s</title>
+  </head>
+  <body>
+    <script>
+      function removeEgg(foods) {
+        let result = [];
+        let count = 0
+        for (let i = 0; i <= foods.length - 1; i++) {
+            if (foods[i] === 'egg' && count < 2) {
+              count++;
+              continue;
+            }
+          result.push(foods[i]);
+        }
+        return result;
+      }
+      console.log(removeEgg(["egg", "apple", "egg", "egg", "ham"]));
+    </script>
+  </body>
+</html>

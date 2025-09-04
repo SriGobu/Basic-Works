@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SET INTERVAL</title>
+</head>
+<body>
+  <script>
+/*
+setInterval => 
+first parameter => a function we want to run in the future
+second parameter => is a timer it wil run the function in the future after the timer 
+it will call the function every three seconds 
+it is also a asynchronous code
+it will keep runing a function in the future
+*/
+    setInterval(function () {
+      console.log('interval');
+    }, 3000);
+    console.log('next timeout');
+  </script>
+</body>
+</html>

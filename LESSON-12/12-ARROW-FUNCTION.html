@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARROW FUNCTION</title>
+</head>
+<body>
+  <script>
+
+    const regularFunction = function (param,param2) {
+      console.log('hello');
+      return 5;
+    }
+    regularFunction();
+
+    const arrowFunction = (param,param2) => {
+      console.log('hello');
+      return 5;
+    }
+    arrowFunction();
+
+    const oneParam = param => { //if only one parameter is there we can remove the brackets
+      console.log(param+1);
+    }
+    oneParam(2);
+
+    const oneLine = () =>  2 + 3 ;
+    console.log(oneLine());
+/*
+passing a function into another function
+=> use arrow function
+in a oneline arrow function we can remove the curly brackets 
+*/
+
+    const objects2 = {
+      method : () => {
+      },
+      method() { //this is called as shorthand method syntax                
+      }
+    };
+
+
+  </script>
+</body>
+</html>

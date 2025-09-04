@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASYNCHRONOUS CODE</title>
+</head>
+<body>
+  <script>
+/*
+setTimeout => is a function that calles the function after 3 seconds
+it will not wait for the 3 seconds to finish 
+it sets up the timer and immediately goes to the next line 
+that's y the second line was printed first
+the code will become a asynchronouns code when we use the setTimeout function
+it doesn't block our code for 3 seconds
+it sets up the timer for the code and goes to the next code
+*/
+
+/*
+this is called as asynchronous code
+ASYNCHRONOUS CODE => 
+the computer won't wait for a line to finish before going to the next line
+the code will become a asynchronouns code when we use the setTimeout function
+*/
+
+/*
+SYNCHRONOUS CODE => 
+the computer will wait for one line to finish before going to the next line
+the normal coding are synchronous code it will wait for each line to be finish
+*/
+
+    setTimeout(function(){
+      console.log('timeout');
+      console.log('timeout 2');
+    }, 3000);
+
+    console.log('next time');
+  </script>
+</body>
+</html>

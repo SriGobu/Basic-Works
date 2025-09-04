@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADVANCED-FUNCTIONS-LOOP-THROUGH-THE-ARRAY</title>
+</head>
+<body>
+  <script>
+/*
+forEach() method => also known as for loop 
+it allows us to loop through the array
+inside the brackets we're going to give forEach a function
+forEach will loop through the array 
+for each value it will save it in the paramter 
+and runs the function
+
+forEach() => is the preferred way to loop through an array
+value => it will save the value into this value parameter
+index => it will save the index of the value into the index parameter
+forEach is not having  continue instead we can use return 
+forEach is also having break;
+if we need to use break;
+then it's better to use a regular loop
+*/
+    [
+      'make dinner',
+      'wash dishes',
+      'watch youtube'
+    ].forEach(function(value,index){
+      if (value === 'wash dishes') {
+        return;
+      }
+      console.log(value);
+      console.log(index);
+    });
+
+  </script>
+</body>
+</html>

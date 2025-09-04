@@ -1,0 +1,36 @@
+<!-- continuing from 12g, instead of displaying " (2) New messages " every time, save the number of messages in a variable: let messages = 2;  -->
+<!-- Use the number in the variable to determine what title to display -->
+<!-- Create 2 buttons 'add' / 'remove' that increase / decrease the 'messages' variable by 1 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12h</title>
+</head>
+<body>
+  <button class="js-add-button" onclick="addMessage();">Add</button>
+  <button class="js-Remove-button" onclick="deleteMessage();">remove</button>
+  <script>
+      let message = 1
+    setInterval(function(){ //mistake : forgotten about the if else and
+      if (document.title === 'App'){ //refered the hub
+        document.title = `(${message}) Messages`;
+      } else {
+        document.title = 'App';
+      }
+    },1000)    
+
+    function addMessage () {
+      if (message > 0) {
+        message += 1;
+      }
+    }
+    function deleteMessage() {
+      if (message > 0) {
+        message -= 1;
+      }
+    }
+  </script>
+</body>
+</html>

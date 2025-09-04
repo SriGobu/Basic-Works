@@ -1,0 +1,20 @@
+<!-- imagine we're creating a messaging app. use setinterval() and document.title to create the feature on the right(the tile changes every 1 second ) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App</title>
+</head>
+<body>
+  <script>
+    setInterval(function(){ //mistake : forgotten about the if else and
+      if (document.title === 'App'){ //refered the hub
+        document.title = '(2) Messages';
+      } else {
+        document.title = 'App';
+      }
+    },1000)
+  </script>
+</body>
+</html>

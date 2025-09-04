@@ -1,0 +1,34 @@
+<!-- Continuing from excersice 12a, create a function runTwice(fun) that takes a function (as a parameter) and runs it twice -->
+<!-- runTwice(function() {console.log('12b')};}); => console.log('12b') twice -->
+<!-- runTwice(add); => console.log(5) twice -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12b</title>
+</head>
+<body>
+  <script>
+    let add = function () {
+      console.log(2+3);
+    }
+    add();
+    add();
+
+    runTwice(add)
+    function runTwice(fun) {
+      fun();
+      fun();//mistake 1 : the parameter contains the function so that we have to call the function by using the parameter fun()
+      console.log('5')
+    }
+    runTwice(function(){
+      console.log('12b');
+    });
+    runTwice(add)
+
+
+
+  </script>
+</body>
+</html>

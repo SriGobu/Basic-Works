@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADD EVENT LISTENER</title>
+  </head>
+  <body>
+    <button class="js-button" onclick=""></button>
+    <script>
+      /*
+addEventListener() =>
+let us run some code when we interact with the element
+it has two parameter
+one => event or what type of interaction we want to listen
+two => a function we want to run when the event occur
+passing a function into another function => use arrow function
+it let's us add multiple event listeners for an event
+
+we can remove a event listener by using .removeEventListener
+it has two parameter
+one => event 
+two => a function that we want to remove
+to remove the exact same function it is better to be stored it in a variable 
+
+*/
+      const buttonElement = document.querySelector(".js-button");
+
+      const addEventListener = () => {
+        console.log("click");
+      };
+
+      buttonElement.addEventListener("click", addEventListener);
+
+      buttonElement.removeEventListener("click", addEventListener);
+
+      buttonElement.addEventListener("click", () => {
+        console.log("clicked");
+      });
+
+      /*
+    <button onclick="playGame('rock')" class="move-button" class="js-rock-button">
+      <img src="/LESSON_10/rock-emoji.png" alt="" class="move-icon" />
+    </button>
+
+    document.querySelector('.js-rock-button').addEventListener('click',playGame('rock'));
+
+=> playGame('rock') => this will not considered as a function 
+it will only run the function and gives the returned value => undefined
+and then we are giving undefined to the addEventListener
+
+  document.querySelector('.js-rock-button').addEventListener('click', () => {
+  playGame('rock');
+  });
+
+
+document.body.addEventListener('keydown',(event) => {
+  console.log(event.key);
+})
+
+to get which key value we pressed addEventListener is also provide it 
+it will save the key we pressed in the event parameter
+*/
+    </script>
+  </body>
+</html>
