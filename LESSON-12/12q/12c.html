@@ -1,0 +1,20 @@
+<!-- create a button below. when clicking the button, after 1 second, the text inside the button changes to !finished! -->
+<!-- (Hint: use setTimeout ()) and the DOM -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>12c</title>
+  </head>
+  <body>
+    <button>Start</button>
+    <script>
+      document.querySelector("button").addEventListener("click", () => {
+        setTimeout(() => {
+          document.querySelector("button").innerHTML = "!finished!";
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>

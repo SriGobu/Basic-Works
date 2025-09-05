@@ -1,0 +1,27 @@
+<!-- Update excersice 12n to only remove first 2 eggs from the array.Again,use .filter() instead of a loop.  -->
+<!-- removeEgg(['egg','apple','egg','egg','ham']) => ['apple','egg','ham'] -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>12o</title>
+  </head>
+  <body>
+    <script>
+      function removeEgg(foods) {
+        result = [];
+        count = 0
+        foods.filter( function (value, index)  {
+          if (value == "egg" && count < 2) {
+            count ++;
+            return false;
+          }
+          return result.push(value);
+        });
+        return result;
+      }
+      console.log(removeEgg(["egg", "apple", "egg", "egg", "ham"]));
+    </script>
+  </body>
+</html>

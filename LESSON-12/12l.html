@@ -1,0 +1,41 @@
+<!-- Create a function countPositive(nums) that takes an array of numbers and return how many numbers in the array are greater than 0 . Create this function using forEach() instead of a loop -->
+<!-- countPositive([1, -3, 5]) -->
+<!-- countPositive([-2, 3, -5, 7, 10]) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12l</title>
+</head>
+<body>
+  <script>
+/*
+when you declared count outside the function
+that variable lives in global scope (or outer scope)
+functions csn read and modify it, but it never resets automatically
+so each time you call the function, it keeps the old value and adds new ones on top 
+that'y if you give the count  = 0 as a global the second call showed the total as if it was continuing from the first 
+*/  
+    // outside => one variable reused across calls
+    function countPositive(nums) {
+      count = 0 // inside => new variable each time
+      nums.forEach((value)=>{
+        if (value > 0) {
+          count+=1;
+        }
+      });
+      return count;
+    }
+    console.log(countPositive([1, -3, 5]));
+    console.log(countPositive([-2, 3, -5, 7, 10]));
+
+/*
+when you declared count inside the function 
+that variables lives in the function's local scope.
+every time the function is called, a fresh copy of count is created, starting at 0.
+after the function finishes, that local variable disappears    
+ */
+  </script>
+</body>
+</html>

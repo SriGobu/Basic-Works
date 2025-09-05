@@ -1,0 +1,25 @@
+<!-- Create a function removeEgg(foods) that takes an array of strings and returns an array where the string 'egg' is removed. Create this using .filter() instead of a loop  -->
+<!-- removeEgg(['egg','apple','egg','egg','ham']) => ['apple','ham'] -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12n</title>
+</head>
+<body>
+  <script>
+    function removeEgg(foods){
+      result = []
+      foods.filter( function (value,index) {
+        if (value == 'egg') {
+          return false
+        }
+          return result.push(value)
+      })
+      return result
+    }
+    console.log(removeEgg(['egg','apple','egg','egg','ham']));
+  </script>
+</body>
+</html>

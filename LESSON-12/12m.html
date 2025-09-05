@@ -1,0 +1,22 @@
+<!-- Create a function addNum(array,num) that takes the an array of numbers and returns an array where each number is increased by 'num'. Create this function using .map() instead of a loop -->
+<!-- addNum([1,2,3],2)) => [3,4,5] -->
+<!-- addNum([-2, -1, 0, 99],2) => [0,1,2,10] -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12m</title>
+</head>
+<body>
+  <script>
+    function addNum(array,num) {
+      result = []
+      array.map(value =>  result.push(value + num)); return result;
+    };
+    console.log(addNum([1,2,3],2));
+    console.log(addNum([-2, -1, 0, 99],2));
+
+  </script>
+</body>
+</html>

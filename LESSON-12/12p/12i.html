@@ -1,0 +1,47 @@
+<!-- Continuing from 12h: -->
+<!-- Dont'let 'messages' go below 0 -->
+<!-- if messages === 0 stop changing the title and display 'App' as the title -->
+<!-- When messages > 0 start changing the title again -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App</title>
+  </head>
+  <body>
+    <button onclick="messages++; displayNotification();">Add</button>
+    <button onclick="
+    if(messages > 0){
+      messages--;
+    }
+    if(messages === 0){
+      stopNotification();
+    }
+    ">remove</button>
+    <script>
+      let messages = 2;
+      let interValid;
+      let isDisplayNotification;
+      displayNotification();
+      function displayNotification () {
+        if (isDisplayNotification){
+          return;
+        }
+        isDisplayNotification = true;
+        interValid = setInterval(() => {
+          if (document.title === 'App') {
+            document.title = `(${messages} New messages)`;
+          } else {
+            document.title = 'App';
+          }
+        },1000);
+      }
+      function stopNotification() {
+        isDisplayNotification = false;
+        clearInterval(interValid);
+        document.title = 'App';
+      }
+    </script>
+  </body>
+</html>

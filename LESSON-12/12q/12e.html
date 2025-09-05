@@ -1,0 +1,21 @@
+<!-- Create a 'Add to cart' button below. when clicking the button,display the message 'Added' below the button.Then, after 2 seconds remove the message -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>12e</title>
+  </head>
+  <body>
+    <button>Add to cart</button>
+    <p></p>
+    <script>
+      document.querySelector("button").addEventListener("click", () => {
+        document.querySelector("p").innerHTML = "Added";
+        setTimeout(function () {
+          document.querySelector("p").innerHTML = "";
+        }, 2000);
+      });
+    </script>
+  </body>
+</html>
