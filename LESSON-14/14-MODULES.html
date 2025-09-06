@@ -1,0 +1,110 @@
+<!-- Modules
+=> a better way to organize our code
+=> problem 6 in the Amazon project code
+=> open the amazon.html and go to the script tag 
+=> we're using three scripts tag to run all our javaScript 
+=> it runs one by one => cart.js => product.js => amazon.js
+=> this is same as combining all the files together into 1 big file
+=> run all our code
+=> there is big problem when using the script tag like this
+=> the problem is it cause the naming conflicts
+=> we created a variable called  => cart = [{}] in cart.js 
+=> it means we can't use the cart in any other files
+=> if we went to amazon.js => create a varibale => cart = [{}] in amazon.js
+=> after the declaration the website will stop working
+=> in the console it will say that the cart is already declared
+=> it's because we created the cart variable in two files 
+=> javascript wil not support variables with the same name in javaScript 
+=> it causes a error and breaks our website
+=> this is called as NAMING CONFLICT
+=> this happesn when two varible have the same name
+=> see in amazon.js => it is really hard to tell which variables have been created in other files and
+=> it is easy to accidentally create a naming conflict 
+=> that's the problem will happens if we use the script tag
+=> to solve this problem javaScript has a featue called modules
+
+=> a module basically contains a variable inside a file
+=> now if it is inside the file it will not cause any naming conflict outside the file
+
+=> now in our project we created a cart variable inside the cart.js file 
+=> so that it doesn't conflict with the cart varibable inside the amazon.js
+
+=> after we deleted the cart.js file the website will run 
+=> but now the naming conflict will not occur
+
+=> Create a Module
+=> Create a file
+=> Don't load the file with <script>
+=> any variables we create inside the file,
+=> will be contaiend inside the file
+=> it wont't cause the naming conflict
+
+=> after the deletion of the cart.js file 
+=> cart doesn't exist anymore
+=> it is contained inside the cart.js 
+=> we can't access 'cart' from the otuside
+
+=> get a variable out of a file
+=> add type="module" attribute
+=> Export
+=> Import
+
+=> add type="moduele" attribute
+=> in our amazon.html file in the script tag we add the type attribute
+=> type="module" => this enables this below feature
+=> let's this file get varibles out of other files.
+
+=> Export
+=> export const cart = [];
+=> by typing the export before the cart variable 
+=> by using this we can access the variable cart outside of this file
+=> now the cart variable can be used outside the file
+
+=> Import
+=> import {cart} from '../data/cart.js'
+=> import => is the function we used to import a file
+=> {cart} => inside the curly brackets we are going to tell what variable we want
+=> from => by using this we are importing the cart variable from a file
+=> '' => inside of it represents the file path
+that file we want 
+=> .. => by using this it will get us out from the current file that we are in
+=> / => by using this it will get out from the current folder that we re in
+=> data => now we are going to the data folder by typing its name
+=> / => by using the slash it will help us get into the file we want
+=> cart.js => the file that contained the varibale we want 
+
+==> what this code does is that it's going to take the variable cart out of the file cart.js 
+=> and we use this file path here to locate that file 
+=> .. means going outisde of the curent folder outside of scripts
+=> then we go into the data folder
+=> then inside the data folder we find cart.js
+
+=> first => we put type="module" to enable this feature
+=> second => we export the variables we want to get out
+=> third => we import the variables when we need them
+
+=> two more thing we need to learn about module
+=> put all imports at the top of the file
+=> we need to use live server inorder to work live server
+=> the modules don't work if we directly open the HTML file
+
+=> benifits
+=> helps us avoid naming conflicts
+=> import {cart} from '../data/cart.js';
+   const cart =[]
+=> if we type like this in a same file it will cause naming conflicts 
+=> module provides a feature avoid this type of naming conflicts
+=> import {cart as myCart} from '../data/cart.js';
+=> we are basically import the variable by its original name
+=> by typing( as myCart) it will convert the original name to an another name
+=> now the cart variable will not conflict with the file
+=> we don't have to worry about the order of our files
+
+=> one script tag is must needed in a file to load the modules from other files
+
+=> import * as cartModule from '../data/cart.js'
+=> cartModule.cart
+=> cartModule.addToCart('id');
+=> this imports everything from a file and grups it together inside this object
+=> then we access each import as a property or a  method
+-->
