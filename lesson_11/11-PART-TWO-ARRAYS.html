@@ -22,9 +22,34 @@
     /*const array2 = array1.slice();*/
     /*by using this will copy the values in the array1*/
 
-    /*Destructing*/
-    const [firstValue,secondValue] = [1, 2, 3];/* [firstValue,secondValue] => by using this we can store the firstValue in the array to be stored in a seperate variable , same for all elements in the array*/
+    /* ( Array ) Destructing*/ 
+    const [firstValue,secondValue] = [1, 2, 3];
+    /*
+    => this is a arrays destructor
+    => in array destructor it works by position (order)
+    => [firstValue,secondValue] => by using this we can store the firstValue in the array to be stored in a seperate variable , same for all elements in the array
+    */
     console.log([firstValue,secondValue]);
+    
+    /*
+    const numbers = [10,20,30]
+    const [,,lastValue] = numbers
+    console.log(lastValue)
+    => in array destructor by using the ,, we skip the first two values and go for the last value in the array
+    */
+    
+    /*
+    const numbers = [10,20,30]
+    const [lastValue] = numbers.at(-1);
+    console.log(lastValue)
+    => by using the .at(-1) we can directly get the last value and store it in a variable
+    */
+    
+    /* object destructor
+    const { productId } = button.dataset
+    => this is called as object destructor
+    => in objects, destructing works by property name
+    */
 
   </script>
 </body>
