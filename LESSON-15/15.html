@@ -1,0 +1,130 @@
+<!-- External Libraries , MVC , Finish the checkout page -->
+<!-- 
+External Libraries
+=> code that is outside of our project
+=> other developers
+        ||
+    internet JS
+        ||
+    our project JS
+=> a lot of developers write javaScript code and 
+=> then put thier code on the intenet
+=> we can actually load their code from the internet
+=> into our project and use it 
+
+    <script src="https://unpkg.com/supersimpledev@1.0.1/hello.js"></script>
+
+=> inside the script tag that src contains a external library's url 
+=> without internet the external library will not work
+=> first we have to load the external libraray and then our local file
+=> why we use external libraries
+=> let us share code
+=> save time
+=> avoid duplicating work
+
+=> example in our checkout page
+=>in the choose a deliveryoption
+=> to get these days
+=> get today's date
+=> do calculations (add 7 days)
+=> display the date in easy to read format
+=> we can do it by ourself but 
+=> by using external library it will save many work
+
+=> compressing the javaScript file is called minification like DayJS library
+
+=> how to use dayjs 
+=> dayjs external libraries usually have a documentation page that shows how to use
+=> we can find the documentation page by searching on googel the library name like dayjs documentation
+=> in the dayjs documentation dayjs() is to get today date 
+=> add has two parameter
+=> first => number of time we want to add
+=> second => length of time we want to add
+=> for 7 days 
+=> const a = dayjs()
+=> const b = a.add(7,'day') => is for 7 days
+
+=> dayjs().format() => which will display the date in a easy to read foramt
+=> dayjs().foramt('') => inside the string tells what kind of format we want for the date
+=> dddd => sunday - saturday 
+=> MMMM => january - december
+=> D => 1-31
+=> this method takes the string and convert it into a string we want
+console.log(deliveryDate.format('dddd, MMMM, D'));
+
+=> when we need something complicated 
+=> try to find an external library first 
+=> before writing the code our self
+
+=> to find many documentation or library 
+=> in google javaScript date library
+
+=> External Libraries + JavaScript Module
+=> we used script => src => url => external library 
+=> by loding it like this if we have same name as the function in the hello
+=> it will cause naming conflict 
+=> a module will contain this code inside a file 
+=> any variables that are created inside the file will not conflict with anything outside of the file
+=> to combine the External Libraries + JavaScript Module 
+=> we have to use the special version of the library called ESM version
+=> ESM => EcmaScript Module ( EcmaScript = javaScript )
+=> ESM version 
+=> A version of a library is just a version that works with javScript modules
+import {hello} from 'https://unpkg.com/supersimpledev@1.0.1/hello.esm.js'
+=> in the hello function ESM file we have the export method
+=> now we are importing the hello fundtion from the ESM module by the use of its url
+
+=> import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js'
+=> now we are using the ESM file of the dayjs
+
+=> import dayjs from 
+=> dayjs => this is called as default export 
+=> a default export is another way of exporting
+=> we can use it when we only want to export 1 thing
+=> we can use it when we only want to exposrt one thing from a file 
+=> it makes the syntax cleaner and easy to use
+
+=> export default formatCurrency;
+=> import formatCurrency from './utils/money.js';
+=> we can just import the name without the curly brackets 
+=> so the syntax is a little bit cleaneer
+=> each file can only have 1 default export
+=> if we only want to export one thing from a file
+=> this is another syntax we can use
+=> so some people like using default exports because 
+=> they feel that exporting only one thing from a file makes the code cleaner
+=> however in your own code it's upto you which version of export you want to use
+
+=>import { products } from '../data/products.js';
+=> { products } => this is called as named export 
+=> not every library has the ESM file 
+=> in that case we hev to use the script tag
+
+-->
+
+<!-- 
+Update the data
+Regenerate all the HTML 
+MVC => Model - View - Contoller
+=> it is a propular technique in software engineering
+=> in MVC 
+=> we split our code into three parts
+=> 1. Model => saves and manages the data
+=> all the files in the data folder are called Model
+=> because this code serves and manages our data
+=> 2. View => takes the data and displays it on the page
+=> in the checkout.js file => scroll to the top and 
+=> there we have code that takes our data and then generates all the HTML 
+=> this part of code is called View
+=> 3. Contoller => runs some code when we interact with the page
+=> in the checkout.js file => in bottom the eventListener's are called Contoller
+=> becuase they do something when we interact with the page
+=> instead of updating the page directly with the Dom
+=> we just update our data and then regenrate all the Html
+=> MVC => makes sure the page always matches the data
+=> MVC => is a design pattern
+=> it is a way to organize and design our code
+=> in the future you might use a technology called a javaScript Framework to build websites
+=> many javaScript Frameworks are based on the MVC 
+=> so it is useful to know how to do it
+-->
