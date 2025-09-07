@@ -212,11 +212,11 @@
 
 .quantity-input{
   width:30px;
-  display: none;
+  display:none;
 }
 
 .is-editing-quantity .quantity-input{
-  display:initial;
+  display: initial;
 }
 
 .is-editing-quantity .save-quantity-link{

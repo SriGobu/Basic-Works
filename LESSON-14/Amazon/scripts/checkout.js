@@ -58,7 +58,7 @@ two issues =>
 => just like this data-product-id="${matchingProduct.id}"
 */ 
 
-import { cart, removeFromCart, calculateCartQuantity, updateQuantity} from '../data/cart.js';        
+import { cart, removeFromCart,calculateCartQuantity, updateQuantity } from '../data/cart.js';        
 import { products } from '../data/products.js';
 import { formatCurrency } from './utils/money.js';
 
@@ -95,7 +95,7 @@ let cartSummaryHTML = '';
           <div class="product-quantity">
             <span>
               Quantity: <span class="quantity-label
-              js-quantity-label-${matchingProduct.id}">${cartItem.quantity}</span>
+               js-quantity-label-${matchingProduct.id}">${cartItem.quantity}</span>
             </span>
             <span class="update-quantity-link link-primary js-update-link">
               Update
@@ -103,8 +103,8 @@ let cartSummaryHTML = '';
             <input class="quantity-input js-quantity-input-${matchingProduct.id}">
             <span class="save-quantity-link 
             link-primary js-save-link"
-             data-product-id="${matchingProduct.id}">
-             Save
+             data-product-id="${matchingProduct.id}"
+             >Save
              </span>
 
             <span class="delete-quantity-link link-primary js-delete-link" data-product-id="${matchingProduct.id}">
