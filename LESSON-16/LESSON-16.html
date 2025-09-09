@@ -1,0 +1,457 @@
+<!-- => Testing 6-26-00
+=> Easiest way to test
+=> Open the website and try out the code
+=> money.js => updateCurrency function => check in the website if it is working
+=> this is called manualTesting
+=> manually open the website and check the code if it is working
+=> disadvantages of manual testing
+=> Hard to test every situation
+=> ex => formatcurrency(2095) => formatcurrency(0)? formatcurrency(2000.5)?
+=> hard to re-test
+
+=> Automated Testing
+=> using code to test code
+=> instead of  manually testing we are telling the computer to do these for us 
+=> this will save a lot of work
+
+=> checking the formatCurrency it working
+
+import {formatCurrency} from '../scripts/utils/money.js';
+
+if (formatCurrency(2095) === '20.95') {
+  console.log('passed');
+} else {
+  console.log('failed');
+}
+
+=> in this above code 
+=> we get the foramtCurreny from money.js
+=> created a folder tests => inside => moneytest.js file to check
+=> inside the file we gave this above code to check
+=> create a html file to run import and run the js file 
+
+=> we use code to test code
+=> to test in various situation 
+=> verify it in the moneytest.js file 
+
+=> situation is called as test case
+=> that means our code has to run in any number that related to it
+
+=> how many testcases should we have ?
+=> two types of test cases
+=> basic test cases => tests if the code is working or not => 1st in money.js
+=> edge cases => tests with values that are tricky => 3rd tst in money.js
+
+=> hard to test =>
+export function formatCurrency(priceCents){
+ return (priceCents / 100).toFixed(2);
+}
+export default formatCurrency;
+=> in this we removed the math.round 
+=> now we can't manually test case
+=> even though we make any changes in the coding we want to check
+=> automated test is easy to retest our code after we make any changes
+
+=> we don't know which of them is failed
+=> so that we are giving a test name to each case
+=> like this console it before the code
+console.log('converts cents into dollars')
+if (formatCurrency(2095) === '20.95') {
+  console.log('passed');
+} else {
+  console.log('failed');
+}
+
+=> group of related tests => test suite
+console.log('test suite : format currency')
+console.log('converts cents into dollars')
+if (formatCurrency(2095) === '20.95') {
+  console.log('passed');
+} else {
+  console.log('failed');
+}
+=> this is how we group the same tests together
+-->
+
+<!-- 
+=> Testing FrameWork
+=> external library that helps us write tests easier
+=> just like how we do in external library
+
+=> stesp in noraml testing
+=> create test suite
+=> create tests
+=> compare values and display result
+
+=> JASMINE
+=> popular testing 
+=> if your working in a company in the future you'll definitely be using a testing framework
+=> but it might not always be jasmine
+
+=> other frameworks => JEST for (ReactJS) => MochaJS 
+
+=> methods
+=> method 1 => manualy download the file and insert it into the project 
+=> you can verify the jasmine documentation to how to use the jasmine
+
+=> first => how to run tests using jasmine
+=> in jasmine we have spec 
+=> spec == test 
+=> the spec runner means test runner
+=> specRunner.html => this files run all the code 
+=> this file contains all of our test
+-->
+
+<!-- 
+Testing using jasmine
+
+step 1 : delete the src and spec folder in the test-jasmine
+step 2 : create a file and named it with what you want to check => example ( moneyTest.js ) in the tests-jasmine folder
+step 3 : inside the file import the function we want to check
+import {formatCurrency} from '../scripts/utils/money.js';
+step 4 : describe() => it will create a group of specs ( ofte called  a suite ) 
+=> like this => console.log('test suite : format currency')
+=> describe need two parameter
+=> first is the description => 'test suite : formatCurrency'
+=> second is the specfunction => ()=>{}
+step 5 : inside the function create a test and give the test a name 
+step 6 : it() => it will create the test
+=> this alos needs two parameter
+=> first (name) => 'converts cents inro dollars' this is the name of the test 
+=> second (function) => ()=>{}
+step 6 : instead fo using a if statment jaasmine provieds this function
+=> expect() => let's us compare a value to other value
+expect lets us have a obejct
+=> expect(formatCurrency(2095)) => this obejct has many methods we can use
+=> one of the method we can use in this obejct
+=> .toEqual('20.95') => this lets us compare this to so we want to compare this to the string ('20.95')
+step 7 : finally this checks if the formatCurrency(2095) is equal to ('20.95');
+step 8 : for running this file , we have to run this inside the tests.html file by using the script tag
+=> <script src="moneyTest.js" type="module"></script>
+step 9 : you can see that how it works by running the tests.html by using the liveServer
+import {formatCurrency} from '../scripts/utils/money.js';
+
+describe('test suite : formatCurrency',()=>{
+    it('converts cents inro dollars',()=>{
+      expect(formatCurrency(2095)).toEqual('20.95');
+    });
+});
+
+=> now we are going to test the addtocart() function in the cart.js
+=> for that we are going to create a new file for test in the test-jasmine folder
+=> we created the cartTest.js file to test the function in the cart.js
+=> before that create a new folder named util in the and save the moneyTest.js file in it
+=> check the import part in the money.js that it looks like this
+import {formatCurrency} from '../../scripts/utils/money.js';
+=> vscode always does it automatically if not add this part => ../
+
+=> same as create a data folder inside put the cartTest.js to match the structure 
+
+=> inside addToCart you can see the if statement
+=> best practise
+=> test each condition of an if-statement
+=> this is called as test Coverage
+=> how much of the code and code is being used
+=> (try to maximize the test coverage)
+
+=> it represents if condition
+
+=> we re loaing the cart from the localStorage
+=> if nothing is in the localStorage 
+=> we use the dafault cart 
+=> so our starting cart depends upon what's inside localStorage
+=> and this is a big problem when testing
+=> because localStorage can chnage 
+=> if there's an empty cart saved in local storage
+=> our test will pass but
+=> if there's not an empty cart in local storage 
+export let cart = JSON.parse(localStorage.getItem('cart'));
+
+=> then this test will fail this is FLAKY TEST
+=> FLAKY TEST => test that sometimes passes and sometimes fails
+=> even if we don't change the code
+
+=> to solve this jasmine have a feature called MOCKS
+=> MOCKS => let's us replace a method with a fake version
+=> then we make the fake version to anything we want 
+
+=> EXAMPLE =>
+=> when we load the cart from localStorage 
+=> we're using localStorage to get item 
+=> so we can use a MOCK to create a fake version of get item
+=> then we can make this fake version to anything we want
+=> like return a empty array
+
+=> creating MOCKS
+=> we're going to create a mock using another function of jasmine called spyOn(captial 0);
+=> spyOn(); =>we have to two parameter 
+=> first => object => the object we want to mock
+=> in  our case its localstorage
+=> second => string => this string will be the method we want to mock
+    spyOn(localStorage,'getItem');
+=> now this will replace localStorage getItem with a fake version
+=> then we can make this fake version anything we want
+
+=> this spyOn(localStorage,'getItem'); gives us a object
+=> this object has a property we can use
+spyOn(localStorage,'getItem').and;
+=> this result is also an object 
+=> this object has a method called .callFake();
+spyOn(localStorage,'getItem').and.callFake();
+=> read like a english sentence
+spyOn localStorage,getItem and callFake()
+=> inside the callFake(()=>{}) we re creating a function 
+=> to tell that what this function wants to do
+=> we re essentially overriding the original getItem with whatever inside the function 
+=> in our case localStorage only supports string
+=> so that return JSON.stringify([]);
+
+=> refer this below coding that we mocked
+
+  it('adds a new product to the cart',()=>{
+    spyOn(localStorage,'getItem').and.callFake(()=>{
+      return JSON.stringify([]);
+    });
+    console.log(localStorage.getItem('cart'));
+    addToCart('e43638ce-6aa0-4b85-b27f-e1d07eb678c6');
+    expect(cart.length).toEqual(1);
+  });
+
+=> after this we can see that jasmine error is still there
+=> take a closer look inside our tests here we re mocking localstorage getItem
+    spyOn(localStorage,'getItem').and.callFake(()=>{
+      return JSON.stringify([]);
+=> but notice that above the this 
+=>we import the cart at the top of the file 
+import {addToCart, cart} from '../../data/cart.js'
+=> but the order of the code is matters
+=> first we load the localStorage from the cart
+=> second we re mocking localStorage getitem
+=> the cart is loaded at this point
+=> and this code doesn't have the effect that we want
+=> the one way to solve this
+=> after we mock this part we have to reload the cart
+=> for reloading the cart we are creating a function and recall it
+=> like this below code
+loadFromStorage();
+
+export function loadFromStorage(){
+cart = JSON.parse(localStorage.getItem('cart'));
+
+if (!cart) {
+  cart = [{
+  productId: 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
+  quantity: 2,
+  deliveryOptionId:'1',
+},{
+  productId: '15b6fc6f-327a-4ec4-896f-486349e85a3d',
+  quantity: 1,
+  deliveryOptionId:'2'
+}];
+}
+}
+=> we are export the function
+=> call it in the cartTest.js => bleow this
+  it('adds a new product to the cart',()=>{
+    spyOn(localStorage,'getItem').and.callFake(()=>{
+      return JSON.stringify([]);
+    });
+    console.log(localStorage.getItem('cart'));
+    loadFromStorage();
+    addToCart('e43638ce-6aa0-4b85-b27f-e1d07eb678c6');
+    expect(cart.length).toEqual(1);
+  });
+=> now we mock the localStorage.getItem first to return a empty array
+=> then we are reloading tha cart below code will be empty
+cart = JSON.parse(localStorage.getItem('cart')) 
+=> this is going to be an empty array 
+=> and the cart will be empty and 
+=> now in our test when we add a product to an empty cart
+=> the cart length will be equal to one 
+
+=> in the cart.js => addtoCart function we are saving the cart to localStorage.set
+=> however we dont'actually want to save to localStorage
+=> because this is ( cartTest.js inside spayOn )just test code
+=> we dont want the test code to modify localStorage or effecting real code
+=> to prevent this we are going to mock the localStorage.setItem 
+
+=> the order is matters and we want our localStorage.setItem first
+=> then we call the addCart
+=> so nowset item will be replce with a fake version 
+=> and this will no longer save to the localStorage
+
+=>spyOn => has another usefull feature
+=> it records every time a method is used
+EXAMPLE
+=> what if we want to make sure that add to crt saves the cart to the localStorage at the end 
+=> in our test setItem is mocked 
+=> so its really check whats inside the local storage instead 
+=> we can just check if add to cart calls setItem at some point 
+=> to check if set item was called at bottom we can use the expect
+
+  it('adds a new product to the cart',()=>{
+    spyOn(localStorage,'setItem').and.callFake(())
+    spyOn(localStorage,'getItem').and.callFake(()=>{
+      return JSON.stringify([]);
+    });
+    loadFromStorage();
+    addToCart('e43638ce-6aa0-4b85-b27f-e1d07eb678c6');
+    expect(cart.length).toEqual(1);
+    expect(localStorage.setItem); ==> like this 
+  });
+
+==>expect has another method called .toHaveBeenCalledTimes();
+=> must write in camel case
+=> this method checks how many times times localStorage called
+    expect(localStorage.setItem).toHaveBeenCalledTimes(1); ==>
+=> we want to call it one that't why (1) is there
+=> keep in mind that it will work only if this method has been mocked with 
+ expect(localStorage.setItem).toHaveBeenCalledTimes(1); ==>
+spyOn();   
+=>it has many expectations it will only pass if all of its expectations are passd 
+
+=> a mock only last for one tast ** importtant
+=> once the method is finished it will nolonger mocked
+
+=> how to create more compicated tests
+=> so far we only tests single function =EX=>addtocart , foramtcurrency
+=> these are called 
+unit tests = testing 1 piece of the code
+=> what if we want to test a full page or part of the page
+=> this requires a more complicated method called INTEGRATION TEST
+=> INTEGRATION TEST => tests many units/pieces of code working together
+=> EXAMPLE=> 
+=> checkout => ordersummary.js => how to check the renderSummary(); function creates a whole section on the checkout page
+=> it uses many functions and many liraries to create the page 
+=> so testing this function will be consodered an integration test 
+=> because it uses many different pieces of code or units of code together 
+
+=> create checkout inisde tests jasmine => inside checkout create orderSummaryTest.js to check the rendeerSummary()
+=> import {renderOrderSummary} from '../../scripts/checkout/orderSummary.js'
+=> describe the test suite with its name and a function to check
+=> renderOrderSummary creates apart of the page
+=> when we re testing a page
+=> 2 things to test
+=> how the page looks (1)
+=> how the page behaves
+=> (1) =>
+=> the renderOrderSummary usually displays the cart on the page
+=> however in our tests, where does the cart get displayed?
+=> here we generate the HTML for the cart
+=> after we generate the HTML we put the HTML inside an element
+with the class js-order-summary
+=> howver we dont't have this element in our tests 
+=> so to fix this we're going to create an element with the class js-order-summary
+=> to do that open the tests.html file
+=> create a div in the body 
+=> remember how we said we need to create an element with the class js-oeder-summary
+=> we're going to create the element and put it inside this div
+=> because inorder to contain everything within it
+describe('test suite: renderOrderSummary',()=>{ 
+  it('displays the cart',()=>{
+    document.querySelector('.js-test-container').innerHTML =`
+    <div class="js-order-summary></div>
+    `;
+  })
+})
+=> this basically takes this HTML ( <div class="js-order-summary></div> ) and puts it inside our test
+( document.querySelector('.js-test-container').innerHTML =`` );
+=> when we call this function it's  going to create the cart and display it in  this element ( div class="js-test-container"></div> )
+=> if we look up on the render order summary 
+=> you'll notice that it takes the cart and then displays it on the page but
+=> remember that by default we load this cart from localStorage 
+=> this can cause problems in our test depending on what is inside localSrorage so to fix it
+=> we're going to mock localStorage.getItem again to control exactly what is inside this cart 
+=> we created the spyOn localstorage.getitm in the cartTest.js so just copy & paste it inside the describe in the ordersummaryTest.js
+
+spyOn(localStorage, 'getItem').and.callFake(() => {
+      return JSON.stringify([{
+        productId: 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
+        quantity: 2,
+        deliveryOptionId: '1',
+      }, {
+        productId: '15b6fc6f-327a-4ec4-896f-486349e85a3d',
+        quantity: 1,
+        deliveryOptionId: '2'
+      }]);
+
+=> we dont have access to storage right now
+=> we need to import it 
+import { loadFromStorage } from '../../data/cart.js';
+
+=> we can use the cart that is in the return 
+=> to make our test a little more detailed let's open the cart.js
+=> use the defult cart inside the spyOn 
+
+    spyOn(localStorage, 'getItem').and.callFake(() => {
+      return JSON.stringify([{ ==> default 
+        productId: 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
+        quantity: 2,
+        deliveryOptionId: '1',
+      }, {
+        productId: '15b6fc6f-327a-4ec4-896f-486349e85a3d',
+        quantity: 1,
+        deliveryOptionId: '2'
+      }]);
+
+=>   <script src="checkout/orderSummaryTest.js" type="module"></script> byt the use of script tag we re loading the orderSummaryTest.js in the tests.html
+
+=> expect is used to check something
+
+=>  how the page behaves
+=> EXAMPLE => we are checking the delete button is working correctly
+
+=> ( it ) is used to create new test
+
+=> HOOKS => let us run some code for each test
+=> EXAMPLE
+=> in our code notice that before  each of our tests we do a bunch of setup here 
+=> so we can actually share all of this code between our two tests usimg a HOOK
+=> create a HOOK 
+=> scroll to the top of the code and outside the test 
+=> right next to the describe or test suite
+=> we're going to use another function of jasmine called 
+
+=> beforeEachHook => this will run the function before each of our test
+=> inside the function put the setup code
+=> beforeEach(()=>{
+
+})
+=> now before each our test it's going to run this function 
+=> and it's going to run all of our setup code
+=> so this is a great way to share code between our tests and remove duplication
+=> after that delete the duplications 
+=> this coding are deleted because we have a copy in the hooks
+spyOn(localStorage, 'setItem');
+
+    document.querySelector('.js-test-container').innerHTML = `
+    <div class="js-order-summary"></div>
+    <div class="js-payment-summary"></div>
+    `;
+    const productId1 = 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6';
+    const productId2 = '15b6fc6f-327a-4ec4-896f-486349e85a3d';
+    spyOn(localStorage, 'getItem').and.callFake(() => {
+      return JSON.stringify([{
+        productId: productId1,
+        quantity: 2,
+        deliveryOptionId: '1',
+      }, {
+        productId: productId2,
+        quantity: 1,
+        deliveryOptionId: '2'
+      }]);
+    });
+    loadFromStorage();
+    renderOrderSummary();
+
+=> we moved the productId1,2 outside the function because inside the function it will become a local scope can't accessed by anyother 
+=> so that we moved the the two variables productId1,2 outside the function to make it global variable 
+
+=> HOOKS in jasmine
+
+=> beforeEach() = runs code before each test
+=> afterEach() = runs code after each test
+=> beforeAll() = runs code before all test
+=> afterAll() = runs code after all test
+
+-->
