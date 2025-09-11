@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Amazon Project</title>
+
+    <!-- This code is needed for responsive design to work.
+      (Responsive design = make the website look good on
+      smaller screen sizes like a phone or a tablet). -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Load a font called Roboto from Google Fonts. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Here are the CSS files for this page. -->
+    <link rel="stylesheet" href="styles/shared/general.css">
+    <link rel="stylesheet" href="styles/shared/amazon-header.css">
+    <link rel="stylesheet" href="styles/pages/amazon.css">
+  </head>
+  <body>
+    <div class="amazon-header">
+      <div class="amazon-header-left-section">
+        <a href="amazon.html" class="header-link">
+          <img class="amazon-logo"
+            src="images/amazon-logo-white.png">
+          <img class="amazon-mobile-logo"
+            src="images/amazon-mobile-logo-white.png">
+        </a>
+      </div>
+
+      <div class="amazon-header-middle-section">
+        <input class="search-bar" type="text" placeholder="Search">
+
+        <button class="search-button">
+          <img class="search-icon" src="images/icons/search-icon.png">
+        </button>
+      </div>
+
+      <div class="amazon-header-right-section">
+        <a class="orders-link header-link" href="orders.html">
+          <span class="returns-text">Returns</span>
+          <span class="orders-text">& Orders</span>
+        </a>
+
+        <a class="cart-link header-link" href="checkout.html">
+          <img class="cart-icon" src="images/icons/cart-icon.png">
+          <div class="cart-quantity js-cart-quantity"></div>
+          <div class="cart-text">Cart</div>
+        </a>
+      </div>
+    </div>
+    
+    <div class="main">
+      <div class="products-grid js-products-grid">
+      </div>
+    </div>
+
+    <script type="module" src="/Amazon/scripts/amazon.js"></script>
+<!-- 
+=> script element loaded one by one 
+=> so the order matters 
+=> first we have to create the products 
+=> if it these two were reversed then the code woudln't 
+
+<script src="/data/products.js"></script> 
+=> this javaScript file creates all the products and then 
+<script src="/scripts/amazon.js"></script>
+=> this javaScript file loop through the products and creates all the HTML
+-->
+ <!--
+=> in the real life projects we creates
+=> we don't write all the HTML manually
+=> instead we save the data for the website in a data structurelike the products.js
+=> then by using javaScript to generate the HTML using the data
+ -->
+</body>
+</html>
+
+<!-- 
+last => make the cart section interactive
+steps =>
+=> calculate the quantity
+=> put the quantity on the page
+=> cart is a array of objects
+=> each object has the quantity property
+=> loop through the array and calculate the cart
+
+=> first we attached the data using the data attribute 
+=> then we click the button 
+=> we got the product name out
+=> then we add the product to the cart 
+
+=> mistake 3 =>
+=> if we reclick the product again it creates a new cart
+=> but what we want is add only the quantity anytime we click
+
+=> steps 
+=> check if the product is already in the cart
+=> if it is in the cart increase the quantity 
+=> if it is not in the cart add it to the cart  
+
+=> mistake 4 =>
+=> it is not good to use the productName to identify the product in the cart
+=> in an e-commerce website we might have a tow product with same name
+=> but from different brand
+=> to fix this 
+=> => give each product an id 
+=> => thatis should be unique
+=> no two products will contain the same id
+
+=> lastlty we have put the quantity on the page
+=> we need HTML element where we're going to put this quantity 
+-->

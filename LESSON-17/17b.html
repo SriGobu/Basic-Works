@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+
+      class Car {
+        brand;
+        model;
+        constructor(carDetails) {
+          this.brand =  carDetails.brand; 
+          this.model =  carDetails.model;
+        }
+      displayInfo(){
+        console.log(`${this.brand} ${this.model}`)
+      }
+      }
+      const car1 = new Car({
+        brand:'toyoto',
+        model:'corolla',
+      })
+      const car2 = new Car({
+        brand:'tesla',
+        model:'model 3' ,     
+      })
+      console.log(car1);
+      console.log(car2);
+      car1.displayInfo();
+      car2.displayInfo();
+
+    </script>
+  </body>
+</html>

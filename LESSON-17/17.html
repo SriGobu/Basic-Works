@@ -1,0 +1,330 @@
+<!-- Object Oriented Programming ( OOP )
+=> another style of programming ( another way we write our code )
+=> OOP => organizing our code into objects
+=> EXAMPLE =>
+=> open cart.js => inside we have code for cart 
+=> we have some data at the top
+=> then we have a bunch of functions at the bottom that modify the cart
+=> these are all seperated from each other data and function
+=> this programming that we have been using throughout this course called PROCEDURAL PROGRAMMING
+=> PROCEDURAL PROGRAMMING => a set of step by step instructions 
+=> this is like a functions 
+=> it organize our code into seperate functions like we did
+=> here on the other hand in OOP
+=>  OOP => organize our code into objects 
+=> example => convert cart.js to OOP based
+=> => create new file cart-oop.js and move the data in the cart.js inside it
+=> inside object it won't support let or export remove it
+=> make it property and value
+=>    loadFromStorage: function(){}
+=> this is how we convert a function to object 
+=> function inside an obejct is METHOD
+=> shorthand method 
+loadFromStorage(){}
+
+=> we have a small problem here 
+=> if we change the name of the object up here this code wont work
+=> to solve this problem javaScript have a feature called " this " 
+=> this => gives the object that contains this function
+=> so it gives this outer object up here =>refer cart-oops.js
+
+=> why do we use OOP?
+=> tries to represent the real world
+=> in real world cart is a physical object
+=> in OOP we represent this physical object as a digital object or in this case a javaScript object
+
+=> import '../data/cart-oop.js';
+=> by using this we can import all the data in the file
+
+=> we can easily create multiple objects
+=> in amazon it has a business cart section how do we make it
+=> we can simply make a copy of the object
+
+=> in real world we can have sepearate cart each of them do's seperate works
+=> in oop we can also have two seperate object each of them do's seperate works
+=> by simply make a copy of the  object 
+=> but in the first cart it has 3 cart
+=> but in teh business cart it has 1 cart
+
+=> but it will make the code messy
+=> to solve it
+=> we are going to using a function to create multiple objects
+
+=> in OOP a naming convention is to use pascal case for things that create or generate objects
+=> use PascalCase for things that generate objects
+=> PascalCase = start every word with a captial
+
+=> to make multiple obejcts generate it by using the function
+=> after you can see the mismatch 
+=> first time first cart has 3 cart and business cart has 1 cart
+=> but the second time the first cart has 3 cart and business cart also 3 carts
+=> because we loading using a same key in localtorage (cart-oop)
+=> so that every time the cart created it gets data from the (cart-oop) that means same data
+=> to solve that we are going to replace the cart-oop by a parameter for differents carts can use a different key in localStorage
+=> when calling the function give values to it like 
+first time function calls ( cart-oop )
+second time function calls ( business-oop )
+-->
+
+<!-- CLASS 
+=> there is a even more better way to do this
+=>  OOP has a feature called a Class
+=> a class is specifically designed for generating objects a class is basically an object 
+=> class => basically object generator
+=> 1 => we use function generate object
+=> 2 => now we use class to generate obejct
+=> create cart-class.js for practise class
+=> inside the class we're going to put the properties and methods
+that we want for each object we generate
+=> this is how we add variables in class
+=> in object : || in class = 
+=> in object undefined, || in class undefined;
+=> for function => in obejct , || , not needed 
+class Cart {
+  cartItems = undefined;
+}
+=> a small problem
+=> inside the function same as object we dont have the localstoragekey 
+=> to fix it inside the class create a localstoragekey with undefined value
+=> this.localStorageKey will access this property in the localStoragekey variable
+
+=> now we generate this class
+=> let's use it to generte these two objects
+
+==> const cart = new Cart();
+=> const cart => variable
+=> new Cart() => new keyword is use to generate a new object using our class 
+=> now these new Cart() => will have all the properrties and methods that we added above
+
+=> in our coding we have two variables with undefined values
+=> after the creating of the object using new Cart();
+=> pass values to the two undefined variables
+cart.localStorageKey = 'cart-oop';
+businessCart,localStorageKey = 'cart-business';
+=> to run change
+ import '../data/cart-oop.js'; == import '../data/cart-class.js';
+ 
+=> check it by using console
+=> in the console you can see the two obejcs with two different values and by clicking the prototype we can see the methods working
+
+=> each object that we generate by a class is called instance
+=> instanceof=> this will check if this object was generated from this class 
+businessCart instanceof Cart
+
+=> OOP => organizing our code into objects ( tries to represent the real wolrd )
+=> CLASS => help us generate these objects
+=> classes have extra features for OOP
+=> CONSTRUCTOR => lets us run some setup code after creating an object 
+=> this is setup code
+cart.localStorageKey = 'cart-oop';
+businessCart,localStorageKey = 'cart-business';
+cart.loadFromStorage();
+businessCart.loadFromStorage();
+=> constructor lets us put this setup code inside the class
+=> after we create an objct it will run the  codein the constructr and setup the object
+=> PROBLEM
+=> each object that we create is going to run the constructor 
+=> so we only need one of each of these lines 
+=> setup up code only for the cart-oop
+  constructor() {
+  this.localStorageKey = 'cart-oop';
+  this.loadFromStorage();
+  }
+=> PROBLEM 
+=> the object that we create is not going to be called cart everytime
+=> to solve it replace cart to this
+=> this points to the object that we generate 
+=> whatever object we re going to get its localstoragekey and set it 
+=> we re going to get its load from storage method and run that methoad
+=> PROBLEM 2 
+=> that we dont want localStorage key to be cart everytime 
+  constructor(localStorageKey) {
+  this.localStorageKey = localStorageKey;
+  this.loadFromStorage();
+  }
+=> by giving a parameter to the constructor and give the parametere inside the constructor
+=> how do we pass values into parameter in the constructor
+const cart = new Cart('cart-oop');
+=> we can pass the values for the parameter when we calling generating a new class 
+=> the cart-oop will be saved in the localStorageKey and the value will be pass to the inside of the constructor
+=> when we are newly generating a object by using the class
+=> first it will run the constructor
+=> more details about constructor
+=> has to be named 'constructor'
+=> should not return anything
+=> class => is a better way to geenrate objects in OOP
+
+=> private properties and methods
+=> when we are working in a team someone accidentally change properites that they're not supposed to change
+=> how do we  prevent this
+=> classes let us make a property or a method private
+=> private = it can only be accessed inside the class
+=> #localStorageKey => but putting a hash before the value will make the value a private and
+=> it can be only be used inside this class or inside the curly brackest
+
+=> a property without a hash in front is called a public property
+=> mening it can be accessed anywhere
+=> if we try to access the #localstorage it will show error that this is a syntax error
+=> field = property 
+=> private methods => by adding a hash in front of the value it will make it a private and it can only be accessed within the class
+--> 
+
+<!-- INHERITANCE 
+Inheritance => lets us reuse code between classes
+=> that allows one class to get all the properties and methods from another class
+=> we dont have to make a copy of the code
+=> EXAMPLE 
+=> in amazon home page we have many products like t shirt and applications
+=> these two are a specific product
+=> because tshirt can have a proeprty called sizechart
+=> to insert the sizecart in the t shirt 
+=> we have to create a new class called clothing and insert the sizeChart along with the ld properties of the tshirt
+=> but it will become more complicated
+=> to solve this the parent class holds the all info about the tshrit and we have to create a new class named clothing to add the sizechart
+=> How to use INHERITANCE
+class Clothing extends Product{}
+=> we created a class caled Clothing and by using the extends 
+=> we are inherting the properties from the product{} class
+=> to check it
+=> we created a object and by the use of new keyword we are creating a copy of the class and run it by using the object
+=> in the Clothing class we added some properties into it 
+=> after the first console we can see the properties
+console.log(tshirt);
+=> to check if it inherting or not
+console.log(tshirt.getPrice());
+=> in the second console we called the .getPrice() function but the function is inside the product class 
+=> even though the clothing class is empty but
+=> it inherits the properties and method from the products class
+=> now we understand that the inheritance is working 
+=> we use inheritance to one class is more specific type of another class
+=> now clothing is more specific type of product 
+=> we want all the properties and methods of the product 
+=> still but we just don't want to copy paste all this code
+=> inheritance let's reuse code between classes
+=> in Clothing we can add properties and methods that are more specific
+=> clothing can have a size chart 
+
+=> EXAMPLE FOR SUPER()
+=> we have a sizecahrtLink in the clothing class
+=> let's add this to our clothing class => sizecahrtLink; => property
+=> to set values to the sizecahrtLink we have to create a constructor
+like we did in the products class
+=> then we are giving the constructor a parameter called productDetails
+=> when we create the clothing we save this object (that is in the new Clothing) into product details
+=> then we use it to set the properties up here (sizecahrtLink);
+=> this.sizeChartLink = productDetails.sizeChartLink;
+=> this => current object (sizeChartLink)
+=> productDetails => that is in the  ( new Clothing )
+=> .sizecahrtLink => by this we are assigning the sizecahrtLink that is in the productDetails object to the current object ( this.sizeChartLink )
+that is inside the class Clothing
+=> now the problem we have here is that clothing inherits all the properties from the products
+=> so we also need to set ID the image the name and so on 
+=> we can do like this.id = productDetails.id => method 1
+=> however instead of doing this one by one all over again 
+=> inhertiance gives us a shortcut that we can use the constructor that is in the parent Class ( products ) to the constructor that we have inside the child class ( Clothing )
+=> so to call the parent constructor 
+=> we re going to use a special feature called SUPER()
+=> SUPER() => just calls the constructor of the parent class ( products )
+=> and we also need to give this parameter ( productDetails is the parameter of the parent class ) 
+=> super(productDetails); => this will call the constructor of the parent class ( products ) and then we can get the properties that is in the parent class constructor to the child class constructor
+=> even though we didn't create a constructor in the child class(Clothing )
+=> by default it run the parent class ( products ) constructor
+
+=> DISCRIMINATOR PROPERTY =>
+=> it tells us which class we should convert this
+=> see the objects in the products that simon mentioned type:'clothing'
+=> simon tells to assign it to the clothing class by saying type:'clothing'
+=> EXAMPLE
+  if (productDetails.type === 'clothing') {
+    return new Clothing(productDetails);
+  }
+=> by the use of this if statment 
+=> if the productDetails.type === 'clothing' it will convert that particular object to the Clothing class
+=> we used new Clothing copy of it
+
+=> METHOD OVER RIDING =>
+  extraInfoHTML(){
+    return ``;
+  }
+=> we created the above method inside the parent class (Product)
+=> we created this below inside the child class ( Clothing )
+  extraInfoHTML(){
+    return `
+    <a href="${this.sizeChartLink}" target="_blank">Size Chart</a>
+    `;
+  }
+=> this will actually override / replace the parents method 
+=> one more thing is if we really want the method in the parent class we can user super.extraInfoHTML();
+=> we used a super inside the constructor of the child class 
+( Clothing )  => super(productDetails);
+=> it will call the proepertie inside the parent class
+=> but the second super.extraInfoHTML();
+=> it will call only the extraInfoHTML();
+-->
+
+<!-- => POLYMORPHISIM 
+=> use a method without knowing a class
+=> EXAMPLE
+=> in amazon.js => we have this => ${product.extraInfoHTML()}
+=> in this we don't know one thing that which class that is we are using in it
+
+=> we can compare it to if else
+=> if true it will go to Clothing if false it will go to product
+=> but in this case the class will determine what this method does
+-->
+
+<!-- BUILT IN CLASSES 
+=> classes that are provided by the language
+=> new Date() => generates an object that represents the current date
+=> every date object has a method called toLocalTimeString()
+=> toLocalTimeString() => gives us the current time
+-->
+
+<!-- more details about this
+=> reminder inside an object we can use the value this 
+=> this will point to the outer object
+=> THIS => lets an object access its own properties
+=> but in js we can use this in anywhere in our code 
+
+=> console.log(this);
+=> the above code will show undefined
+=> becuase there is no object that this will point 
+=> but originally it showa the window
+
+=> we use this inside so it will point to the object
+=> but actually object2 has not been created yet
+=> it will show undefined
+const obejct2 = {
+  a:10,
+  b:this.a
+}
+
+=> the last important place we can use this is inside a function 
+function logThis() {
+  console.log(this);
+}
+=> in this above example 
+=> there is no obejct is inside
+=> so there is nothing for THIS to point to
+=> this = undefined
+
+=> this has a spl function 
+=> inside a function , we can change THIS to whatever we want
+=> to do that function have a method called .call();
+function logThis() {
+  console.log(this);
+}
+logThis();
+logThis.call('hello');
+=> in this above code 
+=> logThis.call('hello'); this assigns the hello as a value to this
+=> if we use THIS inside the function like this
+=> in the .call() method the first value will be assigned as a value to THIS
+=> arrow functions do not change the value of this
+const object3 = {
+  method: ()=>{
+    console.log(this);
+  }
+}
+=> THIS keeps the value that it had outside the arrow function
+-->
